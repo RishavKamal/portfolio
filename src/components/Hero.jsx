@@ -1,50 +1,65 @@
+import HeroVisual from "./HeroVisual";
+
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-[calc(100vh-81px)] max-w-6xl items-center px-6 py-20"
+      className="mx-auto grid min-h-[calc(100vh-81px)] max-w-6xl items-center gap-16 px-6 py-20 xl:grid-cols-[1.2fr_0.8fr]"
     >
-      <div className="max-w-3xl">
+      {/* Left side */}
+      <div className="max-w-5xl">
 
         {/* Status */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/70">
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm font-medium tracking-wide text-white/60">
           <span className="h-2 w-2 rounded-full bg-green-400" />
-          Currently building
+          Learning & building
         </div>
 
         {/* Heading */}
-        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-          Hi, I'm Rishav.
+        <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-8xl">
+          Rishav Kamal
         </h1>
 
+        {/* Subtitle */}
+        <p className="mt-5 max-w-2xl text-lg font-medium leading-7 tracking-[-0.01em] text-white/65 sm:text-xl">
+          Computer Science Student · Java & Full-Stack Developer
+        </p>
+
         {/* Description */}
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-white/60 sm:text-xl">
-          Computer Science student building toward software engineering
-          through Java, DSA, React, Spring Boot and real-world projects.
+        <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
+          I build software while strengthening my foundations in Java, DSA,
+          backend development, and modern web technologies.
         </p>
 
         {/* Buttons */}
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="mt-9 flex flex-wrap gap-4">
 
+          {/* GitHub */}
           <a
             href="https://github.com/RishavKamal"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg bg-white px-5 py-3 font-medium text-black transition hover:bg-white/90"
+            className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black transition hover:bg-white/90"
           >
             GitHub
           </a>
 
+          {/* LinkedIn */}
           <a
-            href="#projects"
-            className="rounded-lg border border-white/15 px-5 py-3 font-medium text-white transition hover:bg-white/5"
+            href="https://www.linkedin.com/in/rishavkamal"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold tracking-tight text-white transition hover:bg-white/5"
           >
-            View Projects
+            LinkedIn
           </a>
 
         </div>
 
       </div>
+
+      {/* Right side */}
+      <HeroVisual />
     </section>
   );
 };
