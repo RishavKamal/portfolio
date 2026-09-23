@@ -13,9 +13,8 @@ const Contact = () => {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      const content = sectionRef.current.querySelector(
-        ".contact-content"
-      );
+      const content =
+        sectionRef.current.querySelector(".contact-content");
 
       if (prefersReducedMotion) {
         gsap.set(content, {
@@ -75,15 +74,15 @@ const Contact = () => {
           <div className="max-w-3xl">
 
             {/* Section heading */}
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-(--text-faint)">
               Contact
             </p>
 
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-(--text) sm:text-4xl">
               Let's connect.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-(--text-soft) sm:text-lg">
               I'm always open to connecting with fellow developers, recruiters,
               and people interested in software and technology.
             </p>
@@ -93,7 +92,7 @@ const Contact = () => {
 
               <a
                 href="mailto:rishavkamalbg821@gmail.com"
-                className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black transition hover:bg-white/90"
+                className="primary-button rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-opacity duration-200 hover:opacity-90"
               >
                 Email Me
               </a>
@@ -102,7 +101,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/rishavkamal"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold tracking-tight text-white transition hover:bg-white/5"
+                className="rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-colors duration-200 hover:bg-(--surface-hover)"
               >
                 LinkedIn
               </a>

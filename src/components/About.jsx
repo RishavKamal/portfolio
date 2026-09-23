@@ -72,11 +72,11 @@ const About = () => {
 
           {/* Section heading */}
           <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-(--text-faint)">
               About
             </p>
 
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-(--text) sm:text-4xl">
               Learning, building, and getting better every day.
             </h2>
           </div>
@@ -85,7 +85,8 @@ const About = () => {
           <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
 
             {/* Main text */}
-            <div className="max-w-2xl space-y-6 text-base leading-8 text-white/55 sm:text-lg">
+            <div className="max-w-2xl space-y-6 text-base leading-8 text-(--text-soft) sm:text-lg">
+
               <p>
                 I'm a Computer Science student with a growing focus on
                 software engineering. I enjoy understanding how things work
@@ -104,45 +105,46 @@ const About = () => {
                 understand a problem, design a solution, and turn it into
                 reliable software.
               </p>
+
             </div>
 
             {/* Current focus card */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+            <div className="rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-300">
 
-              <p className="text-sm font-medium text-white/40">
+              <p className="text-sm font-medium text-(--text-faint)">
                 Current focus
               </p>
 
               <div className="mt-6 space-y-5">
 
                 <div>
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium text-(--text)">
                     Java & DSA
                   </p>
 
-                  <p className="mt-1 text-sm leading-6 text-white/40">
+                  <p className="mt-1 text-sm leading-6 text-(--text-soft)">
                     Building strong programming and problem-solving
                     fundamentals.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium text-(--text)">
                     Backend Development
                   </p>
 
-                  <p className="mt-1 text-sm leading-6 text-white/40">
+                  <p className="mt-1 text-sm leading-6 text-(--text-soft)">
                     Learning Spring Boot, APIs, databases, and backend
                     architecture.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium text-(--text)">
                     Full-Stack Development
                   </p>
 
-                  <p className="mt-1 text-sm leading-6 text-white/40">
+                  <p className="mt-1 text-sm leading-6 text-(--text-soft)">
                     Building practical interfaces with React and modern web
                     tools.
                   </p>

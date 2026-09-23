@@ -50,8 +50,10 @@ const Hero = () => {
         cursor.classList.remove("active");
       };
 
-      // Reduced motion:
-      // Show everything immediately without animation.
+      /* --------------------------------
+         REDUCED MOTION
+      -------------------------------- */
+
       if (prefersReducedMotion) {
         title.textContent = titleText;
         subtitle.textContent = subtitleText;
@@ -69,7 +71,10 @@ const Hero = () => {
         return;
       }
 
-      // Start with empty text.
+      /* --------------------------------
+         INITIAL STATE
+      -------------------------------- */
+
       gsap.set(title, {
         text: "",
       });
@@ -82,7 +87,6 @@ const Hero = () => {
         text: "",
       });
 
-      // Hide cursors initially.
       gsap.set(
         [titleCursor, subtitleCursor, descriptionCursor],
         {
@@ -90,11 +94,14 @@ const Hero = () => {
         }
       );
 
-      // Hide buttons initially.
       gsap.set(actions, {
         opacity: 0,
         y: 12,
       });
+
+      /* --------------------------------
+         TIMELINE
+      -------------------------------- */
 
       const timeline = gsap.timeline({
         defaults: {
@@ -102,9 +109,9 @@ const Hero = () => {
         },
       });
 
-      // --------------------------------
-      // STATUS
-      // --------------------------------
+      /* --------------------------------
+         STATUS
+      -------------------------------- */
 
       timeline.from(".hero-status", {
         opacity: 0,
@@ -112,9 +119,9 @@ const Hero = () => {
         duration: 0.5,
       });
 
-      // --------------------------------
-      // NAME
-      // --------------------------------
+      /* --------------------------------
+         NAME
+      -------------------------------- */
 
       timeline.call(() => {
         activateCursor(titleCursor);
@@ -126,15 +133,16 @@ const Hero = () => {
         ease: "none",
       });
 
-      // Move cursor to subtitle.
+      /* Move cursor to subtitle */
+
       timeline.call(() => {
         deactivateCursor(titleCursor);
         activateCursor(subtitleCursor);
       });
 
-      // --------------------------------
-      // SUBTITLE
-      // --------------------------------
+      /* --------------------------------
+         SUBTITLE
+      -------------------------------- */
 
       timeline.to(subtitle, {
         text: subtitleText,
@@ -142,15 +150,16 @@ const Hero = () => {
         ease: "none",
       });
 
-      // Move cursor to description.
+      /* Move cursor to description */
+
       timeline.call(() => {
         deactivateCursor(subtitleCursor);
         activateCursor(descriptionCursor);
       });
 
-      // --------------------------------
-      // DESCRIPTION
-      // --------------------------------
+      /* --------------------------------
+         DESCRIPTION
+      -------------------------------- */
 
       timeline.to(description, {
         text: descriptionText,
@@ -158,14 +167,15 @@ const Hero = () => {
         ease: "none",
       });
 
-      // Stop cursor after description.
+      /* Stop cursor */
+
       timeline.call(() => {
         deactivateCursor(descriptionCursor);
       });
 
-      // --------------------------------
-      // BUTTONS
-      // --------------------------------
+      /* --------------------------------
+         BUTTONS
+      -------------------------------- */
 
       timeline.to(
         actions,
@@ -177,9 +187,9 @@ const Hero = () => {
         "-=0.4"
       );
 
-      // --------------------------------
-      // CODE CARD
-      // --------------------------------
+      /* --------------------------------
+         CODE CARD
+      -------------------------------- */
 
       timeline.from(
         ".hero-visual",
@@ -187,7 +197,7 @@ const Hero = () => {
           opacity: 0,
           x: 40,
           scale: 0.96,
-          duration: 0.6,
+          duration: 0.9,
         },
         "-=0.6"
       );
@@ -206,13 +216,13 @@ const Hero = () => {
       <div className="max-w-5xl">
 
         {/* Status */}
-        <div className="hero-status mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm font-medium tracking-wide text-white/60">
-          <span className="h-2 w-2 rounded-full bg-green-400" />
+        <div className="hero-status mb-7 inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--surface) px-3.5 py-2 text-sm font-medium tracking-wide text-(--text-muted)">
+          <span className="h-2 w-2 rounded-full bg-(--accent)" />
           Learning & building
         </div>
 
         {/* Heading */}
-        <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.045em] text-(--text) sm:text-6xl md:text-7xl lg:text-8xl">
           <span ref={titleRef}></span>
 
           <span
@@ -222,7 +232,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-5 max-w-2xl text-lg font-medium leading-7 tracking-[-0.01em] text-white/65 sm:text-xl">
+        <p className="mt-5 max-w-2xl text-lg font-medium leading-7 tracking-[-0.01em] text-(--text-muted) sm:text-xl">
           <span ref={subtitleRef}></span>
 
           <span
@@ -232,7 +242,7 @@ const Hero = () => {
         </p>
 
         {/* Description */}
-        <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-7 text-(--text-soft) sm:text-lg">
           <span ref={descriptionRef}></span>
 
           <span
@@ -251,7 +261,7 @@ const Hero = () => {
             href="https://github.com/RishavKamal"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black transition hover:bg-white/90"
+            className="primary-button rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-opacity duration-200 hover:opacity-90"
           >
             GitHub
           </a>
@@ -261,7 +271,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/rishavkamal"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold tracking-tight text-white transition hover:bg-white/5"
+            className="rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-colors duration-200 hover:bg-(--surface-hover)"
           >
             LinkedIn
           </a>

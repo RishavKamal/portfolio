@@ -13,9 +13,8 @@ const Education = () => {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      const content = sectionRef.current.querySelector(
-        ".education-content"
-      );
+      const content =
+        sectionRef.current.querySelector(".education-content");
 
       if (prefersReducedMotion) {
         gsap.set(content, {
@@ -74,32 +73,32 @@ const Education = () => {
 
           {/* Section heading */}
           <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-(--text-faint)">
               Education
             </p>
 
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-(--text) sm:text-4xl">
               Academic background.
             </h2>
           </div>
 
           {/* Education card */}
-          <div className="mt-12 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+          <div className="mt-12 max-w-3xl rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-300 sm:p-8">
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
 
               <div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-(--text)">
                   Chandigarh University
                 </h3>
 
-                <p className="mt-2 text-base text-white/60">
+                <p className="mt-2 text-base text-(--text-muted)">
                   Bachelor of Engineering in Computer Science & Engineering
                   (CSE)
                 </p>
               </div>
 
-              <p className="text-sm text-white/40">
+              <p className="text-sm text-(--text-faint)">
                 2024 – Present
               </p>
 

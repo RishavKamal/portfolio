@@ -81,17 +81,17 @@ const Skills = () => {
 
           {/* Section heading */}
           <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-(--text-faint)">
               Skills
             </p>
 
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-(--text) sm:text-4xl">
               Technologies I'm currently focused on.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
-              The tools I'm using to strengthen my fundamentals and build
-              real software.
+            <p className="mt-5 max-w-2xl text-base leading-7 text-(--text-soft) sm:text-lg">
+              The tools I'm using to strengthen my fundamentals and build real
+              software.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ const Skills = () => {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-white/70 transition hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+                className="rounded-xl border border-(--border) bg-(--surface) px-4 py-3 text-sm font-medium text-(--text-muted) transition-colors duration-200 hover:border-(--border-hover) hover:bg-(--surface-hover) hover:text-(--text)"
               >
                 {skill}
               </span>

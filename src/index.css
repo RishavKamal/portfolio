@@ -1,9 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+/* =========================================================
+   TAILWIND THEME
+========================================================= */
 
 @theme {
   --font-inter: "Inter", system-ui, sans-serif;
+
+  /* Smooth navbar easing */
+  --ease-menu: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* =========================================================
+   DEFAULT THEME — MIDNIGHT
+========================================================= */
+
+:root {
+  --bg: #050505;
+
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-soft: rgba(255, 255, 255, 0.5);
+  --text-faint: rgba(255, 255, 255, 0.4);
+
+  --surface: rgba(255, 255, 255, 0.02);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+
+  --button-primary-bg: #ffffff;
+  --button-primary-text: #050505;
+
+  --cursor: rgba(255, 255, 255, 0.6);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   MIDNIGHT
+========================================================= */
+
+html[data-theme="midnight"] {
+  --bg: #050505;
+
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-soft: rgba(255, 255, 255, 0.5);
+  --text-faint: rgba(255, 255, 255, 0.4);
+
+  --surface: rgba(255, 255, 255, 0.02);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+
+  --button-primary-bg: #ffffff;
+  --button-primary-text: #050505;
+
+  --cursor: rgba(255, 255, 255, 0.6);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   ARCTIC
+========================================================= */
+
+html[data-theme="arctic"] {
+  --bg: #f5f7fb;
+
+  --text: #111827;
+  --text-muted: rgba(17, 24, 39, 0.72);
+  --text-soft: rgba(17, 24, 39, 0.58);
+  --text-faint: rgba(17, 24, 39, 0.52);
+
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-hover: rgba(255, 255, 255, 0.95);
+
+  --border: rgba(17, 24, 39, 0.14);
+  --border-hover: rgba(17, 24, 39, 0.22);
+
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+
+  --button-primary-bg: #111827;
+  --button-primary-text: #ffffff;
+
+  --cursor: rgba(17, 24, 39, 0.7);
+
+  color-scheme: light;
+}
+
+/* =========================================================
+   SLATE
+========================================================= */
+
+html[data-theme="slate"] {
+  --bg: #0b1220;
+
+  --text: #e5e7eb;
+  --text-muted: rgba(229, 231, 235, 0.68);
+  --text-soft: rgba(229, 231, 235, 0.52);
+  --text-faint: rgba(229, 231, 235, 0.4);
+
+  --surface: rgba(148, 163, 184, 0.06);
+  --surface-hover: rgba(148, 163, 184, 0.1);
+
+  --border: rgba(148, 163, 184, 0.16);
+  --border-hover: rgba(148, 163, 184, 0.28);
+
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+
+  --button-primary-bg: #e5e7eb;
+  --button-primary-text: #0b1220;
+
+  --cursor: rgba(229, 231, 235, 0.7);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   EMERALD
+========================================================= */
+
+html[data-theme="emerald"] {
+  --bg: #06110d;
+
+  --text: #ecfdf5;
+  --text-muted: rgba(236, 253, 245, 0.68);
+  --text-soft: rgba(236, 253, 245, 0.52);
+  --text-faint: rgba(236, 253, 245, 0.4);
+
+  --surface: rgba(52, 211, 153, 0.045);
+  --surface-hover: rgba(52, 211, 153, 0.08);
+
+  --border: rgba(52, 211, 153, 0.16);
+  --border-hover: rgba(52, 211, 153, 0.3);
+
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+
+  --button-primary-bg: #ecfdf5;
+  --button-primary-text: #06110d;
+
+  --cursor: rgba(236, 253, 245, 0.7);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -16,31 +172,77 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #050505;
-  color: white;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  background-color: var(--bg);
+  color: var(--text);
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+a {
+  color: inherit;
 }
 
 a:focus-visible {
-  outline: 2px solid white;
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-button {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* =========================================================
+   TYPING CURSOR
+========================================================= */
+
 .typing-cursor {
   display: inline-block;
+
   width: 1.5px;
   height: 0.9em;
+
   margin-left: 0.15em;
+
   vertical-align: -0.08em;
-  background: currentColor;
+
+  background: var(--cursor);
+
   opacity: 0;
 }
 
 .typing-cursor.active {
   opacity: 1;
-  animation: cursor-blink 0.8s steps(1) infinite;
+
+  animation:
+    cursor-blink 0.8s steps(1) infinite;
 }
 
 @keyframes cursor-blink {
@@ -55,9 +257,136 @@ a:focus-visible {
   }
 }
 
+/* =========================================================
+   DESKTOP NAVBAR ENTRANCE
+========================================================= */
+
+@keyframes desktop-nav-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.desktop-nav-item {
+  position: relative;
+
+  opacity: 0;
+
+  animation-name: desktop-nav-enter;
+  animation-duration: 650ms;
+  animation-timing-function: var(--ease-menu);
+  animation-delay: var(--nav-delay);
+  animation-fill-mode: forwards;
+
+  transition:
+    color 300ms var(--ease-menu),
+    transform 350ms var(--ease-menu);
+}
+
+.desktop-nav-item:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ACTIVE / HOVER UNDERLINE
+========================================================= */
+
+.nav-active-line {
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 1.5px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition:
+    transform 650ms var(--ease-menu),
+    opacity 300ms ease;
+}
+
+/* =========================================================
+   ACTIVE SECTION
+========================================================= */
+
+.desktop-nav-item.is-active .nav-active-line {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   HOVER ON NON-ACTIVE SECTION
+========================================================= */
+
+.desktop-nav-item:not(.is-active):hover
+  .nav-active-line {
+  opacity: 1;
+  transform: scaleX(0.55);
+
+  transition:
+    transform 450ms var(--ease-menu),
+    opacity 250ms ease;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .typing-cursor.active {
     animation: none;
     opacity: 1;
   }
+
+  .desktop-nav-item {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .nav-active-line {
+    transition: none;
+  }
+
+  .desktop-nav-item.is-active .nav-active-line {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================================
+   THEME TRANSITIONS
+========================================================= */
+
+html,
+body,
+nav,
+section,
+footer,
+button {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
 }
