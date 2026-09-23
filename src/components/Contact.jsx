@@ -1,42 +1,114 @@
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Contact = () => {
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const content = sectionRef.current.querySelector(
+        ".contact-content"
+      );
+
+      if (prefersReducedMotion) {
+        gsap.set(content, {
+          scale: 1,
+          opacity: 1,
+        });
+
+        return;
+      }
+
+      gsap.set(content, {
+        scale: 0.92,
+        opacity: 0.6,
+        transformOrigin: "center center",
+        willChange: "transform, opacity",
+      });
+
+      const timeline = gsap.timeline({
+        defaults: {
+          ease: "none",
+        },
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: 0.45,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      timeline.to(content, {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+      });
+
+      timeline.to(content, {
+        scale: 0.92,
+        opacity: 0.6,
+        duration: 1,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="contact"
-      className="border-t border-white/10"
-
+      className="scroll-mt-24 min-h-[calc(100vh-81px)]"
     >
-      <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
-        <div className="max-w-3xl">
+      <div className="contact-content flex min-h-[calc(100vh-81px)] items-center">
+        <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
 
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
-            Contact
-          </p>
+          <div className="max-w-3xl">
 
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Let's connect.
-          </h2>
+            {/* Section heading */}
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/40">
+              Contact
+            </p>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
-            I'm always open to connecting with fellow developers, recruiters,
-            and people interested in software and technology.
-          </p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Let's connect.
+            </h2>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="mailto:rishavkamalbg821@gmail.com"
-              className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black transition hover:bg-white/90"
-            >
-              Email Me
-            </a>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
+              I'm always open to connecting with fellow developers, recruiters,
+              and people interested in software and technology.
+            </p>
 
-            <a
-              href="https://www.linkedin.com/in/rishavkamal"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold tracking-tight text-white transition hover:bg-white/5"
-            >
-              LinkedIn
-            </a>
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap gap-4">
+
+              <a
+                href="mailto:rishavkamalbg821@gmail.com"
+                className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-tight text-black transition hover:bg-white/90"
+              >
+                Email Me
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/rishavkamal"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold tracking-tight text-white transition hover:bg-white/5"
+              >
+                LinkedIn
+              </a>
+
+            </div>
+
           </div>
 
         </div>
