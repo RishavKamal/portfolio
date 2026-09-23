@@ -1,6 +1,6 @@
 const HeroVisual = () => {
   return (
-    <div className="relative hidden items-center justify-center xl:flex">
+    <div className="hero-visual relative hidden items-center justify-center xl:flex">
 
       {/* Background glow */}
       <div className="absolute h-72 w-72 rounded-full bg-white/[0.03] blur-3xl" />
