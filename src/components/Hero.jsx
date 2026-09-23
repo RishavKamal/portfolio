@@ -122,7 +122,7 @@ const Hero = () => {
 
       timeline.to(title, {
         text: titleText,
-        duration: 0.9,
+        duration: 0.6,
         ease: "none",
       });
 
@@ -138,7 +138,7 @@ const Hero = () => {
 
       timeline.to(subtitle, {
         text: subtitleText,
-        duration: 1.5,
+        duration: 1.0,
         ease: "none",
       });
 
@@ -154,7 +154,7 @@ const Hero = () => {
 
       timeline.to(description, {
         text: descriptionText,
-        duration: 2,
+        duration: 1.3,
         ease: "none",
       });
 
@@ -187,7 +187,7 @@ const Hero = () => {
           opacity: 0,
           x: 40,
           scale: 0.96,
-          duration: 0.9,
+          duration: 0.6,
         },
         "-=0.6"
       );
