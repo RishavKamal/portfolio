@@ -2,7 +2,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="border-t border-white/10"
+      className="scroll-mt-24 border-t border-white/10"
     >
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
 
