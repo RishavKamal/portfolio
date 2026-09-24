@@ -68,7 +68,7 @@ const About = () => {
       className="scroll-mt-24 min-h-[calc(100vh-81px)]"
     >
       <div className="about-content flex min-h-[calc(100vh-81px)] items-center">
-        <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
+        <div className="portfolio-container py-24 sm:py-32">
 
           {/* Section heading */}
           <div className="max-w-2xl">

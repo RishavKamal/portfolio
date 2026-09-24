@@ -157,7 +157,10 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener(
+      "keydown",
+      handleKeyDown
+    );
 
     document.body.style.overflow = menuOpen
       ? "hidden"
@@ -204,7 +207,7 @@ const Navbar = () => {
             : "border-(--border) bg-(--bg)/90 backdrop-blur-md"
         }`}
       >
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="portfolio-container">
           <div className="flex h-[81px] items-center justify-between">
 
             {/* ==================================================
@@ -304,7 +307,9 @@ const Navbar = () => {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-navigation"
                 onClick={() =>
-                  setMenuOpen((previous) => !previous)
+                  setMenuOpen(
+                    (previous) => !previous
+                  )
                 }
                 className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-(--border) bg-(--surface) text-(--text-muted) transition-[background-color,border-color,color] duration-300 hover:border-(--border-hover) hover:bg-(--surface-hover) hover:text-(--text) focus-visible:ring-2 focus-visible:ring-(--accent)"
               >

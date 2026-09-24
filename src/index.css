@@ -1,24 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* =========================================================
-   TAILWIND THEME
-========================================================= */
-
 @theme {
   --font-inter: "Inter", system-ui, sans-serif;
-
-  /* Smooth navbar easing */
   --ease-menu: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* =========================================================
-   DEFAULT THEME — MIDNIGHT
-========================================================= */
+   THEME VARIABLES
+   ========================================================= */
 
 :root {
   --bg: #050505;
-
   --text: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.65);
   --text-soft: rgba(255, 255, 255, 0.5);
@@ -40,14 +33,9 @@
 
   color-scheme: dark;
 }
-
-/* =========================================================
-   MIDNIGHT
-========================================================= */
 
 html[data-theme="midnight"] {
   --bg: #050505;
-
   --text: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.65);
   --text-soft: rgba(255, 255, 255, 0.5);
@@ -57,7 +45,7 @@ html[data-theme="midnight"] {
   --surface-hover: rgba(255, 255, 255, 0.05);
 
   --border: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(255, 255, 255, 0.2);
+  --border-hover: rgba(255, 255, 255, 255, 0.2);
 
   --accent: #34d399;
   --accent-soft: rgba(52, 211, 153, 0.12);
@@ -70,13 +58,8 @@ html[data-theme="midnight"] {
   color-scheme: dark;
 }
 
-/* =========================================================
-   ARCTIC
-========================================================= */
-
 html[data-theme="arctic"] {
   --bg: #f5f7fb;
-
   --text: #111827;
   --text-muted: rgba(17, 24, 39, 0.72);
   --text-soft: rgba(17, 24, 39, 0.58);
@@ -99,13 +82,8 @@ html[data-theme="arctic"] {
   color-scheme: light;
 }
 
-/* =========================================================
-   SLATE
-========================================================= */
-
 html[data-theme="slate"] {
   --bg: #0b1220;
-
   --text: #e5e7eb;
   --text-muted: rgba(229, 231, 235, 0.68);
   --text-soft: rgba(229, 231, 235, 0.52);
@@ -128,13 +106,8 @@ html[data-theme="slate"] {
   color-scheme: dark;
 }
 
-/* =========================================================
-   EMERALD
-========================================================= */
-
 html[data-theme="emerald"] {
   --bg: #06110d;
-
   --text: #ecfdf5;
   --text-muted: rgba(236, 253, 245, 0.68);
   --text-soft: rgba(236, 253, 245, 0.52);
@@ -158,8 +131,8 @@ html[data-theme="emerald"] {
 }
 
 /* =========================================================
-   GLOBAL
-========================================================= */
+   GLOBAL STYLES
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -172,7 +145,6 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-
   background-color: var(--bg);
   color: var(--text);
 
@@ -201,18 +173,10 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-/* =========================================================
-   PRIMARY BUTTON
-========================================================= */
-
 .primary-button {
   background-color: var(--button-primary-bg);
   color: var(--button-primary-text);
 }
-
-/* =========================================================
-   TEXT SELECTION
-========================================================= */
 
 ::selection {
   background: var(--accent-soft);
@@ -220,15 +184,43 @@ a:focus-visible {
 }
 
 /* =========================================================
+   PORTFOLIO CONTENT CONTAINER
+   ========================================================= */
+
+.portfolio-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-container {
+    padding-inline: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .portfolio-container {
+    padding-inline: 48px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .portfolio-container {
+    max-width: 1500px;
+    padding-inline: 56px;
+  }
+}
+
+/* =========================================================
    TYPING CURSOR
-========================================================= */
+   ========================================================= */
 
 .typing-cursor {
   display: inline-block;
-
   width: 1.5px;
   height: 0.9em;
-
   margin-left: 0.15em;
 
   vertical-align: -0.08em;
@@ -240,9 +232,7 @@ a:focus-visible {
 
 .typing-cursor.active {
   opacity: 1;
-
-  animation:
-    cursor-blink 0.8s steps(1) infinite;
+  animation: cursor-blink 0.8s steps(1) infinite;
 }
 
 @keyframes cursor-blink {
@@ -258,8 +248,8 @@ a:focus-visible {
 }
 
 /* =========================================================
-   DESKTOP NAVBAR ENTRANCE
-========================================================= */
+   NAVBAR
+   ========================================================= */
 
 @keyframes desktop-nav-enter {
   0% {
@@ -293,10 +283,6 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 
-/* =========================================================
-   ACTIVE / HOVER UNDERLINE
-========================================================= */
-
 .nav-active-line {
   position: absolute;
 
@@ -322,21 +308,12 @@ a:focus-visible {
     opacity 300ms ease;
 }
 
-/* =========================================================
-   ACTIVE SECTION
-========================================================= */
-
 .desktop-nav-item.is-active .nav-active-line {
   opacity: 1;
   transform: scaleX(1);
 }
 
-/* =========================================================
-   HOVER ON NON-ACTIVE SECTION
-========================================================= */
-
-.desktop-nav-item:not(.is-active):hover
-  .nav-active-line {
+.desktop-nav-item:not(.is-active):hover .nav-active-line {
   opacity: 1;
   transform: scaleX(0.55);
 
@@ -346,8 +323,8 @@ a:focus-visible {
 }
 
 /* =========================================================
-   REDUCED MOTION
-========================================================= */
+   ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -377,7 +354,7 @@ a:focus-visible {
 
 /* =========================================================
    THEME TRANSITIONS
-========================================================= */
+   ========================================================= */
 
 html,
 body,

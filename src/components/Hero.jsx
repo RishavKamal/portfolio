@@ -210,7 +210,7 @@ const Hero = () => {
     <section
       ref={heroRef}
       id="hero"
-      className="mx-auto grid min-h-[calc(100vh-81px)] max-w-6xl items-center gap-16 px-6 py-20 xl:grid-cols-[1.2fr_0.8fr]"
+      className="portfolio-container grid min-h-[calc(100vh-81px)] items-center gap-16 py-20 xl:grid-cols-[1.2fr_0.8fr]"
     >
       {/* Left side */}
       <div className="max-w-5xl">
@@ -275,6 +275,7 @@ const Hero = () => {
           >
             LinkedIn
           </a>
+          
         </div>
       </div>
 
