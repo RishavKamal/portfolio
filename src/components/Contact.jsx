@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,30 +71,32 @@ const Contact = () => {
     >
       <div className="contact-content flex min-h-[calc(100vh-81px)] items-center">
         <div className="portfolio-container py-24 sm:py-32">
-
           <div className="max-w-3xl">
-
             {/* Section heading */}
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-(--text-faint)">
               Contact
             </p>
 
             <h2 className="text-3xl font-semibold tracking-tight text-(--text) sm:text-4xl">
-              Let's connect.
+              Have a project or opportunity in mind?
             </h2>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-(--text-soft) sm:text-lg">
-              I'm always open to connecting with fellow developers, recruiters,
-              and people interested in software and technology.
+              I'm currently focused on Java, backend development, and
+              full-stack engineering. If you'd like to connect, feel free to
+              reach out.
             </p>
 
-            {/* Buttons */}
+            {/* Contact actions */}
             <div className="mt-8 flex flex-wrap gap-4">
-
               <a
                 href="mailto:rishavkamalbg821@gmail.com"
-                className="primary-button rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-opacity duration-200 hover:opacity-90"
+                className="primary-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-all duration-300 hover:!bg-(--accent) hover:!text-(--bg)"
               >
+                <FaEnvelope
+                  aria-hidden="true"
+                  className="text-base"
+                />
                 Email Me
               </a>
 
@@ -101,15 +104,16 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/rishavkamal"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-colors duration-200 hover:bg-(--surface-hover)"
+                className="inline-flex items-center gap-2 rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-all duration-300 hover:border-(--accent) hover:bg-(--accent) hover:text-(--bg)"
               >
+                <FaLinkedin
+                  aria-hidden="true"
+                  className="text-base"
+                />
                 LinkedIn
               </a>
-
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
