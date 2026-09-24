@@ -1,20 +1,56 @@
-<<<<<<< HEAD
-# React + Vite
+# Rishav Kamal — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website showcasing my journey as a Computer Science student and developer.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[rishavkamal.com](https://rishavkamal.com)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- GSAP
+- JavaScript
+- Git & GitHub
+- Vercel
 
-## Expanding the ESLint configuration
+## About
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# portfolio
->>>>>>> 982544c90d4f9592a9180b3bec067000005d0fe8
+I am a Computer Science student focused on building strong foundations in:
+
+- Java
+- Data Structures & Algorithms
+- Spring Boot
+- Backend Development
+- React
+- SQL
+
+This portfolio documents my learning journey, technical skills, education, and development progress.
+
+## Features
+
+- Responsive design
+- Multiple color themes
+- GSAP animations
+- Scroll-based section animations
+- Animated hero section
+- Mobile navigation
+- Custom domain
+- Vercel deployment
+
+## Sections
+
+- Home
+- About
+- Skills
+- Education
+- Contact
+
+## Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/RishavKamal/portfolio.git
