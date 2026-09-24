@@ -5,20 +5,29 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import NotFound from "./components/NotFound";
 
 const App = () => {
-  return (
-    <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-black"
-      >
-        Skip to main content
-      </a>
+  const isNotFound = window.location.pathname !== "/";
 
+  if (isNotFound) {
+    return (
+      <div className="h-screen w-full overflow-hidden">
+        <div className="fixed right-5 top-5 z-[100] sm:right-6 sm:top-6">
+          <ThemeSwitcher />
+        </div>
+
+        <NotFound />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen">
       <Navbar />
 
-      <main id="main-content">
+      <main>
         <Hero />
         <About />
         <Skills />
@@ -27,7 +36,7 @@ const App = () => {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
