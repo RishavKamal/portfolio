@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import HeroVisual from "./HeroVisual";
 
 gsap.registerPlugin(TextPlugin);
@@ -87,12 +88,9 @@ const Hero = () => {
         text: "",
       });
 
-      gsap.set(
-        [titleCursor, subtitleCursor, descriptionCursor],
-        {
-          opacity: 0,
-        }
-      );
+      gsap.set([titleCursor, subtitleCursor, descriptionCursor], {
+        opacity: 0,
+      });
 
       gsap.set(actions, {
         opacity: 0,
@@ -261,8 +259,13 @@ const Hero = () => {
             href="https://github.com/RishavKamal"
             target="_blank"
             rel="noreferrer"
-            className="primary-button rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-opacity duration-200 hover:opacity-90"
+            className="primary-button inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold tracking-tight transition-all duration-300 hover:!bg-(--accent) hover:!text-(--bg)"
           >
+            <FaGithub
+              aria-hidden="true"
+              className="text-base"
+            />
+
             GitHub
           </a>
 
@@ -271,11 +274,15 @@ const Hero = () => {
             href="https://www.linkedin.com/in/rishavkamal"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-colors duration-200 hover:bg-(--surface-hover)"
+            className="inline-flex items-center gap-2 rounded-lg border border-(--border) px-5 py-3 text-sm font-semibold tracking-tight text-(--text) transition-all duration-300 hover:border-(--accent) hover:bg-(--accent) hover:text-(--bg)"
           >
+            <FaLinkedin
+              aria-hidden="true"
+              className="text-base"
+            />
+
             LinkedIn
           </a>
-          
         </div>
       </div>
 
