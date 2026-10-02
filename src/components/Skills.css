@@ -1,15 +1,24 @@
 .skills-loop-section {
   --skills-bg: #f6f3ee;
+
   --skills-heading: #171614;
+
   --skills-text: #504c46;
-  --skills-muted: #777169;
-  --skills-soft: #989188;
+
+  --skills-muted: #66615a;
+
+  --skills-soft: #6b665f;
+
   --skills-line: rgba(23, 22, 20, 0.20);
+
   --skills-border: rgba(23, 22, 20, 0.12);
+
   --skills-icon: #292722;
+
   --skills-accent: #567b5d;
 
   position: relative;
+
   min-height: 150vh;
 
   padding: 180px 8vw 110px;
@@ -17,6 +26,7 @@
   overflow: hidden;
 
   background: var(--skills-bg);
+
   color: var(--skills-heading);
 
   scroll-margin-top: 90px;
@@ -25,6 +35,7 @@
     background-color 0.45s ease,
     color 0.45s ease;
 }
+
 
 /* ==================================================
    DARK MODE
@@ -35,15 +46,24 @@ html.dark .skills-loop-section,
 body.dark .skills-loop-section,
 body[data-theme="dark"] .skills-loop-section {
   --skills-bg: #11100f;
+
   --skills-heading: #f1ede5;
+
   --skills-text: #c5c0b7;
+
   --skills-muted: #98928a;
+
   --skills-soft: #706b64;
+
   --skills-line: rgba(241, 237, 229, 0.20);
+
   --skills-border: rgba(241, 237, 229, 0.12);
+
   --skills-icon: #ded8ce;
+
   --skills-accent: #87a98c;
 }
+
 
 /* ==================================================
    INNER
@@ -51,16 +71,20 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-inner {
   position: relative;
+
   z-index: 2;
 
   width: min(1180px, 100%);
+
   min-height: 100%;
 
   margin: 0 auto;
 
   display: flex;
+
   flex-direction: column;
 }
+
 
 /* ==================================================
    BACKGROUND NUMBER
@@ -70,6 +94,7 @@ body[data-theme="dark"] .skills-loop-section {
   position: absolute;
 
   top: 40px;
+
   right: 4vw;
 
   font-size: clamp(
@@ -79,17 +104,22 @@ body[data-theme="dark"] .skills-loop-section {
   );
 
   font-weight: 700;
+
   line-height: 0.75;
+
   letter-spacing: -0.09em;
 
   color: var(--skills-heading);
+
   opacity: 0.025;
 
   user-select: none;
+
   pointer-events: none;
 
   transition: color 0.45s ease;
 }
+
 
 /* ==================================================
    HEADER
@@ -99,6 +129,7 @@ body[data-theme="dark"] .skills-loop-section {
   position: relative;
 
   width: 100%;
+
   max-width: 850px;
 
   margin-bottom: 125px;
@@ -106,7 +137,9 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-label {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   margin-bottom: 34px;
@@ -114,12 +147,15 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-muted);
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.16em;
 }
 
 .skills-loop-label-line {
   width: 28px;
+
   height: 1px;
 
   background: var(--skills-line);
@@ -146,7 +182,9 @@ body[data-theme="dark"] .skills-loop-section {
   );
 
   font-weight: 650;
+
   line-height: 0.86;
+
   letter-spacing: -0.075em;
 
   will-change:
@@ -157,6 +195,7 @@ body[data-theme="dark"] .skills-loop-section {
   transition:
     color 0.45s ease;
 }
+
 
 /* ==================================================
    MAIN CONTENT
@@ -173,13 +212,16 @@ body[data-theme="dark"] .skills-loop-section {
     filter;
 }
 
+
 /* ==================================================
    TOPLINE
 ================================================== */
 
 .skills-loop-topline {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   padding-bottom: 17px;
@@ -189,7 +231,9 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-muted);
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.15em;
 
   transition:
@@ -199,7 +243,9 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-counter {
   display: flex;
+
   align-items: center;
+
   gap: 7px;
 
   color: var(--skills-soft);
@@ -210,6 +256,7 @@ body[data-theme="dark"] .skills-loop-section {
 .skills-loop-counter span {
   opacity: 0.45;
 }
+
 
 /* ==================================================
    MAIN FEATURE
@@ -236,10 +283,12 @@ body[data-theme="dark"] .skills-loop-section {
   min-height: 470px;
 
   display: flex;
+
   align-items: center;
 
   overflow: hidden;
 }
+
 
 /* ==================================================
    ACTIVE SKILL
@@ -247,7 +296,9 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-active-wrapper {
   display: flex;
+
   align-items: center;
+
   gap: 34px;
 
   max-width: 100%;
@@ -260,10 +311,13 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-icon-wrapper {
   width: 82px;
+
   height: 82px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   flex: 0 0 auto;
@@ -279,6 +333,7 @@ body[data-theme="dark"] .skills-loop-section {
 
 .skills-loop-icon {
   width: 38px;
+
   height: 38px;
 }
 
@@ -294,8 +349,11 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-muted);
 
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 0.16em;
+
   text-transform: uppercase;
 }
 
@@ -311,6 +369,7 @@ body[data-theme="dark"] .skills-loop-section {
    * This prevents long skill names from dominating
    * the entire viewport.
    */
+
   font-size: clamp(
     3.6rem,
     6vw,
@@ -318,7 +377,9 @@ body[data-theme="dark"] .skills-loop-section {
   );
 
   font-weight: 650;
+
   line-height: 0.88;
+
   letter-spacing: -0.07em;
 
   overflow-wrap: anywhere;
@@ -326,6 +387,7 @@ body[data-theme="dark"] .skills-loop-section {
   transition:
     color 0.45s ease;
 }
+
 
 /* ==================================================
    DESCRIPTION
@@ -337,7 +399,9 @@ body[data-theme="dark"] .skills-loop-section {
   padding-left: 36px;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 22px;
 }
 
@@ -345,13 +409,17 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-soft);
 
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 0.12em;
+
   font-variant-numeric: tabular-nums;
 }
 
 .skills-loop-line {
   width: 34px;
+
   height: 1px;
 
   background: var(--skills-line);
@@ -368,7 +436,9 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-text);
 
   font-size: 16px;
+
   line-height: 1.7;
+
   letter-spacing: -0.005em;
 
   transition:
@@ -379,10 +449,14 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-soft);
 
   font-size: 9px;
+
   font-weight: 600;
+
   letter-spacing: 0.13em;
+
   text-transform: uppercase;
 }
+
 
 /* ==================================================
    SKILL INDEX
@@ -419,7 +493,9 @@ body[data-theme="dark"] .skills-loop-section {
   gap: 8px;
 
   border: 0;
+
   border-right: 1px solid var(--skills-border);
+
   border-bottom: 1px solid var(--skills-border);
 
   background: transparent;
@@ -427,6 +503,7 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-soft);
 
   font: inherit;
+
   text-align: left;
 
   cursor: pointer;
@@ -449,7 +526,9 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-soft);
 
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 0.08em;
 
   transition:
@@ -464,9 +543,11 @@ body[data-theme="dark"] .skills-loop-section {
   color: inherit;
 
   font-size: 13px;
+
   font-weight: 500;
 
   white-space: nowrap;
+
   text-overflow: ellipsis;
 }
 
@@ -522,6 +603,7 @@ body[data-theme="dark"] .skills-loop-section {
   color: var(--skills-accent);
 }
 
+
 /* ==================================================
    FOCUS
 ================================================== */
@@ -529,6 +611,7 @@ body[data-theme="dark"] .skills-loop-section {
 .skills-loop-focus {
   display: none;
 }
+
 
 /* ==================================================
    FOOTER
@@ -538,19 +621,25 @@ body[data-theme="dark"] .skills-loop-section {
   margin-top: 34px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   color: var(--skills-soft);
 
   font-size: 11px;
+
   font-weight: 500;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 
   transition:
     color 0.45s ease;
 }
+
 
 /* ==================================================
    TABLET
@@ -564,6 +653,7 @@ body[data-theme="dark"] .skills-loop-section {
      * More top breathing room because the navbar
      * overlays the page.
      */
+
     padding:
       175px
       6vw
@@ -588,6 +678,7 @@ body[data-theme="dark"] .skills-loop-section {
      * This is much more balanced around tablet/
      * split-screen desktop widths.
      */
+
     font-size: clamp(
       3.7rem,
       8.5vw,
@@ -615,11 +706,13 @@ body[data-theme="dark"] .skills-loop-section {
 
   .skills-loop-icon-wrapper {
     width: 68px;
+
     height: 68px;
   }
 
   .skills-loop-icon {
     width: 31px;
+
     height: 31px;
   }
 
@@ -639,6 +732,7 @@ body[data-theme="dark"] .skills-loop-section {
     max-width: 190px;
 
     font-size: 15px;
+
     line-height: 1.65;
   }
 
@@ -648,6 +742,7 @@ body[data-theme="dark"] .skills-loop-section {
     padding: 0 14px;
   }
 }
+
 
 /* ==================================================
    SMALL TABLET / LARGE PHONE
@@ -703,6 +798,7 @@ body[data-theme="dark"] .skills-loop-section {
 
   .skills-loop-description p {
     max-width: 160px;
+
     font-size: 14px;
   }
 
@@ -722,6 +818,7 @@ body[data-theme="dark"] .skills-loop-section {
   }
 }
 
+
 /* ==================================================
    MOBILE
 ================================================== */
@@ -740,6 +837,7 @@ body[data-theme="dark"] .skills-loop-section {
 
   .skills-loop-background-number {
     top: 55px;
+
     right: -25px;
 
     font-size: 17rem;
@@ -785,11 +883,13 @@ body[data-theme="dark"] .skills-loop-section {
 
   .skills-loop-icon-wrapper {
     width: 56px;
+
     height: 56px;
   }
 
   .skills-loop-icon {
     width: 27px;
+
     height: 27px;
   }
 
@@ -816,6 +916,7 @@ body[data-theme="dark"] .skills-loop-section {
     max-width: 330px;
 
     font-size: 15px;
+
     line-height: 1.65;
   }
 
@@ -852,6 +953,7 @@ body[data-theme="dark"] .skills-loop-section {
     margin-top: 25px;
 
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 8px;
@@ -860,14 +962,17 @@ body[data-theme="dark"] .skills-loop-section {
   }
 }
 
+
 /* ==================================================
    KEYBOARD FOCUS
 ================================================== */
 
 .skills-loop-index-item:focus-visible {
   outline: 2px solid currentColor;
+
   outline-offset: -2px;
 }
+
 
 /* ==================================================
    REDUCED MOTION
@@ -878,8 +983,11 @@ body[data-theme="dark"] .skills-loop-section {
   .skills-loop-section *::before,
   .skills-loop-section *::after {
     animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
+
     scroll-behavior: auto !important;
   }
 }

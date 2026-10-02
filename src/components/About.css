@@ -9,9 +9,9 @@
   --about-text: #504c46;
   --about-lead: #292722;
 
-  --about-muted: #777169;
-  --about-soft: #989188;
-  --about-context: #918a82;
+  --about-muted: #66615a;
+  --about-soft: #6b665f;
+  --about-context: #625d56;
 
   --about-line: rgba(23, 22, 20, 0.14);
   --about-line-soft: rgba(23, 22, 20, 0.1);
@@ -22,6 +22,7 @@
 
   position: relative;
 
+  width: 100%;
   min-height: 145vh;
 
   display: flex;
@@ -583,6 +584,7 @@ body[data-theme="dark"] .about-section {
   display: flex;
 
   align-items: center;
+
   justify-content: flex-end;
 
   color: var(--about-muted);
