@@ -1,0 +1,1147 @@
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about-section {
+  --about-bg: #f6f3ee;
+
+  --about-heading: #171614;
+  --about-text: #504c46;
+  --about-lead: #292722;
+
+  --about-muted: #777169;
+  --about-soft: #989188;
+  --about-context: #918a82;
+
+  --about-line: rgba(23, 22, 20, 0.14);
+  --about-line-soft: rgba(23, 22, 20, 0.10);
+  --about-line-strong: rgba(23, 22, 20, 0.20);
+
+  --about-background-number: #171614;
+  --about-accent: #567b5d;
+
+  position: relative;
+
+  min-height: 145vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 170px 8vw 180px;
+
+  background: var(--about-bg);
+
+  color: var(--about-heading);
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   DARK THEME
+================================================== */
+
+html[data-theme="dark"] .about-section,
+html.dark .about-section,
+body.dark .about-section,
+body[data-theme="dark"] .about-section {
+  --about-bg: #11100f;
+
+  --about-heading: #f1ede5;
+  --about-text: #c5c0b7;
+  --about-lead: #ded8ce;
+
+  --about-muted: #98928a;
+  --about-soft: #706b64;
+  --about-context: #918a82;
+
+  --about-line: rgba(241, 237, 229, 0.14);
+  --about-line-soft: rgba(241, 237, 229, 0.10);
+  --about-line-strong: rgba(241, 237, 229, 0.22);
+
+  --about-background-number: #f1ede5;
+  --about-accent: #87a98c;
+}
+
+
+/* ==================================================
+   BACKGROUND NUMBER
+================================================== */
+
+.about-background-number {
+  position: absolute;
+
+  top: 5%;
+  right: -2%;
+
+  z-index: 0;
+
+  color: var(--about-background-number);
+
+  font-size: clamp(
+    22rem,
+    42vw,
+    46rem
+  );
+
+  font-weight: 700;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.11em;
+
+  pointer-events: none;
+  user-select: none;
+
+  will-change:
+    transform,
+    opacity;
+
+  opacity: 0.035;
+}
+
+
+/* ==================================================
+   READING MARKER
+================================================== */
+
+.about-reading-marker {
+  position: absolute;
+
+  left: 28px;
+  top: 50%;
+
+  z-index: 6;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transform:
+    translateY(-50%);
+
+  pointer-events: none;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.marker-number {
+  color: var(--about-muted);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+.marker-line {
+  width: 1px;
+  height: 42px;
+
+  background:
+    var(--about-line-strong);
+}
+
+
+.marker-label {
+  color: var(--about-muted);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  writing-mode: vertical-rl;
+}
+
+
+/* ==================================================
+   PROGRESS LINE
+
+   Hidden because the current portfolio design
+   does not use the decorative left progress line.
+================================================== */
+
+.about-progress-track {
+  display: none;
+}
+
+.about-progress-bar {
+  width: 1px;
+  height: 100%;
+
+  transform-origin: top;
+
+  background:
+    var(--about-accent);
+}
+
+
+/* ==================================================
+   INNER
+================================================== */
+
+.about-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* ==================================================
+   TOP
+================================================== */
+
+.about-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 48px;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.about-top-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.section-label,
+.about-small-label {
+  color: var(--about-soft);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.2;
+}
+
+
+.section-label {
+  margin: 0;
+}
+
+
+.section-slash {
+  color: var(--about-context);
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+
+.section-context {
+  color: var(--about-context);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+}
+
+
+.section-index {
+  color: var(--about-muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ==================================================
+   STATEMENT
+================================================== */
+
+.about-statement {
+  max-width: 1250px;
+
+  margin: 0;
+
+  color: var(--about-heading);
+
+  font-size: clamp(
+    4.5rem,
+    9.5vw,
+    10rem
+  );
+
+  font-weight: 600;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.085em;
+
+  will-change: transform;
+}
+
+
+.statement-line {
+  display: block;
+}
+
+
+.statement-offset {
+  margin-left: 0.055em;
+}
+
+
+.statement-last {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 0.018em;
+}
+
+
+.about-word {
+  display: inline-block;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+.about-period {
+  display: inline-block;
+
+  color: var(--about-muted);
+
+  font-weight: 400;
+}
+
+
+/* ==================================================
+   RULE
+================================================== */
+
+.about-rule {
+  width: 100%;
+  height: 1px;
+
+  margin-top: 130px;
+
+  transform-origin: left;
+
+  background:
+    var(--about-line);
+}
+
+
+/* ==================================================
+   LOWER
+================================================== */
+
+.about-lower {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(320px, 0.65fr);
+
+  gap: 120px;
+
+  margin-top: 60px;
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.about-description {
+  max-width: 720px;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+.about-small-label {
+  display: block;
+
+  margin-bottom: 30px;
+}
+
+
+.about-copy {
+  max-width: 720px;
+}
+
+
+/* ==================================================
+   BODY TEXT
+================================================== */
+
+.about-description p {
+  max-width: 700px;
+
+  margin: 0 0 30px;
+
+  color: var(--about-text);
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* ==================================================
+   LEAD
+================================================== */
+
+.about-description .about-lead {
+  max-width: 660px;
+
+  margin-bottom: 34px;
+
+  color: var(--about-lead);
+
+  font-size: 23px;
+
+  font-weight: 450;
+
+  line-height: 1.6;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* ==================================================
+   META
+================================================== */
+
+.about-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  margin-top: 54px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid
+    var(--about-line-soft);
+}
+
+
+.about-meta span {
+  color: var(--about-muted);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* ==================================================
+   CURRENT FOCUS
+================================================== */
+
+.about-focus {
+  align-self: start;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.focus-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.focus-count {
+  color: var(--about-context);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+.focus-line {
+  width: 100%;
+  height: 1px;
+
+  margin-top: 30px;
+
+  transform-origin: left;
+
+  background:
+    var(--about-line-strong);
+}
+
+
+/* ==================================================
+   FOCUS LIST
+================================================== */
+
+.focus-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.focus-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    48px
+    1fr
+    28px;
+
+  align-items: center;
+
+  min-height: 70px;
+
+  padding: 17px 0;
+
+  border-bottom:
+    1px solid
+    var(--about-line-soft);
+
+  transition:
+    padding 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  cursor: default;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+.focus-number {
+  color: var(--about-context);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+
+.focus-name {
+  color: var(--about-lead);
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.025em;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.focus-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  color: var(--about-muted);
+
+  font-size: 16px;
+
+  opacity: 0;
+
+  transform:
+    translate(-8px, 8px);
+
+  transition:
+    opacity 0.35s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.focus-hover-line {
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    var(--about-accent);
+
+  transition:
+    width 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* ==================================================
+   FOCUS HOVER
+================================================== */
+
+.focus-item:hover {
+  padding-left: 12px;
+}
+
+
+.focus-item:hover .focus-name {
+  transform:
+    translateX(4px);
+}
+
+
+.focus-item:hover .focus-arrow {
+  opacity: 1;
+
+  transform:
+    translate(0, 0);
+}
+
+
+.focus-item:hover .focus-hover-line {
+  width: 100%;
+}
+
+
+/* ==================================================
+   CURRENTLY BUILDING
+================================================== */
+
+.about-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 130px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    var(--about-line-soft);
+
+}
+
+
+.bottom-label {
+  color: var(--about-muted);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+
+.bottom-text {
+  color: var(--about-text);
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* ==================================================
+   CLOSING STATEMENT
+================================================== */
+
+.about-closing {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  margin-top: 115px;
+
+  margin-right: 4%;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+.about-closing span {
+  display: block;
+
+  color: var(--about-heading);
+
+  font-size: clamp(
+    2.7rem,
+    5vw,
+    5.5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+
+.about-closing span:nth-child(2) {
+  margin-right: 0.8em;
+
+  color: var(--about-text);
+}
+
+
+.about-closing span:nth-child(3) {
+  margin-right: 1.6em;
+
+  color: var(--about-muted);
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 768px) {
+
+  .about-section {
+    /*
+      Important:
+      let the content determine the scroll distance.
+      The Framer Motion scroll animation remains
+      exactly the same on mobile.
+    */
+    min-height: auto;
+
+    padding:
+      120px
+      24px
+      150px;
+  }
+
+
+  .about-background-number {
+    top: 8%;
+
+    right: -6%;
+
+    font-size: 32rem;
+  }
+
+
+  .about-reading-marker {
+    display: none;
+  }
+
+
+  .about-statement {
+    font-size: clamp(
+      3.5rem,
+      10vw,
+      6rem
+    );
+
+    line-height: 0.88;
+  }
+
+
+  .about-rule {
+    margin-top: 90px;
+  }
+
+
+  .about-lower {
+    grid-template-columns: 1fr;
+
+    gap: 75px;
+
+    margin-top: 50px;
+  }
+
+
+  .about-description {
+    max-width: 100%;
+  }
+
+
+  .about-description p {
+    font-size: 18px;
+
+    line-height: 1.75;
+  }
+
+
+  .about-description .about-lead {
+    font-size: 21px;
+
+    line-height: 1.65;
+  }
+
+
+  .about-focus {
+    width: 100%;
+  }
+
+
+  .about-bottom {
+    margin-top: 100px;
+  }
+
+
+  .about-closing {
+    align-items: flex-end;
+
+    margin-top: 100px;
+
+    margin-right: 0;
+  }
+
+
+  .about-closing span {
+    font-size: clamp(
+      2.5rem,
+      7vw,
+      4.5rem
+    );
+  }
+
+
+  .focus-name {
+    font-size: 16px;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+  .about-section {
+    min-height: auto;
+
+    padding:
+      90px
+      20px
+      120px;
+  }
+
+
+  .about-background-number {
+    top: 11%;
+
+    right: -15%;
+
+    font-size: 22rem;
+  }
+
+
+  .about-top {
+    margin-bottom: 32px;
+  }
+
+
+  .about-top-left {
+    gap: 9px;
+  }
+
+
+  .section-context {
+    font-size: 9px;
+  }
+
+
+  .about-statement {
+    font-size: 3.45rem;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.078em;
+  }
+
+
+  .statement-offset {
+    margin-left: 0.025em;
+  }
+
+
+  .about-rule {
+    margin-top: 70px;
+  }
+
+
+  .about-lower {
+    gap: 65px;
+
+    margin-top: 42px;
+  }
+
+
+  .about-small-label {
+    font-size: 10px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .about-description p {
+    font-size: 17px;
+
+    line-height: 1.75;
+  }
+
+
+  .about-description .about-lead {
+    font-size: 19px;
+
+    line-height: 1.65;
+
+    margin-bottom: 28px;
+  }
+
+
+  .about-meta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 42px;
+  }
+
+
+  .focus-item {
+    min-height: 62px;
+
+    padding: 14px 0;
+  }
+
+
+  .focus-name {
+    font-size: 15px;
+  }
+
+
+  .focus-arrow {
+    font-size: 14px;
+  }
+
+
+  .about-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 85px;
+  }
+
+
+  .bottom-text {
+    font-size: 12px;
+  }
+
+
+  .about-closing {
+    align-items: flex-start;
+
+    margin-top: 85px;
+  }
+
+
+  .about-closing span {
+    font-size: 2.7rem;
+
+    line-height: 0.98;
+  }
+
+
+  .about-closing span:nth-child(2) {
+    margin-left: 0.5em;
+
+    margin-right: 0;
+  }
+
+
+  .about-closing span:nth-child(3) {
+    margin-left: 1em;
+
+    margin-right: 0;
+  }
+}
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+================================================== */
+
+@media (max-width: 360px) {
+
+  .about-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  .about-statement {
+    font-size: 3.15rem;
+  }
+
+
+  .about-description .about-lead {
+    font-size: 18px;
+  }
+
+
+  .about-description p {
+    font-size: 16px;
+  }
+
+
+  .about-closing span {
+    font-size: 2.45rem;
+  }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-section *,
+  .about-section *::before,
+  .about-section *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+
+  .about-word,
+  .about-description,
+  .about-focus,
+  .about-closing,
+  .about-top,
+  .about-background-number {
+    transform: none !important;
+  }
+
+
+  .focus-item:hover {
+    padding-left: 0;
+  }
+
+
+  .focus-item:hover .focus-name {
+    transform: none;
+  }
+
+
+  .focus-item:hover .focus-arrow {
+    opacity: 0;
+    transform: none;
+  }
+
+
+  .focus-item:hover .focus-hover-line {
+    width: 0;
+  }
+}

@@ -1,0 +1,1211 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.site-navbar {
+  position: fixed;
+
+  top: 18px;
+  left: 0;
+  right: 0;
+
+  z-index: 9999;
+
+  padding: 0 24px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN NAVBAR SURFACE
+========================================================= */
+
+.site-navbar-inner {
+  position: relative;
+
+  width: min(1160px, 100%);
+  height: 56px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items: center;
+
+  padding: 0 8px 0 21px;
+
+  border: 1px solid
+    rgba(25, 24, 22, 0.075);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  backdrop-filter:
+    blur(20px)
+    saturate(120%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(120%);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.95),
+
+    0 7px 22px
+      rgba(17, 17, 17, 0.045),
+
+    0 1px 3px
+      rgba(17, 17, 17, 0.035);
+
+  transition:
+    height 0.4s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+    background 0.35s ease,
+
+    border-color 0.35s ease,
+
+    box-shadow 0.35s ease;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.site-navbar-scrolled
+  .site-navbar-inner {
+
+  height: 53px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border-color:
+    rgba(25, 24, 22, 0.09);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.95),
+
+    0 10px 30px
+      rgba(17, 17, 17, 0.065),
+
+    0 2px 5px
+      rgba(17, 17, 17, 0.035);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-navbar-logo {
+  width: fit-content;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 2px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #151513;
+
+  cursor: pointer;
+
+  letter-spacing: 0.145em;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.site-navbar-logo-main {
+  font-size: 13px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.site-navbar-logo-mark {
+  position: relative;
+
+  top: -3px;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION SHELL
+========================================================= */
+
+.site-navbar-nav {
+  position: relative;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  padding: 3px 4px;
+
+  border: 1px solid
+    rgba(216, 210, 202, 0.7);
+
+  border-radius: 999px;
+
+  background:
+    rgba(243, 240, 235, 0.58);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.75);
+
+  isolation: isolate;
+
+  transition:
+    background 0.35s ease,
+
+    border-color 0.35s ease,
+
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
+.site-navbar-link {
+  position: relative;
+
+  min-width: 70px;
+
+  height: 34px;
+
+  padding: 0 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #77736d;
+
+  /* Increased from 12px */
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    color 0.22s ease,
+
+    font-size 0.22s ease;
+}
+
+
+.site-navbar-link:hover {
+  color: #2c2b28;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+========================================================= */
+
+.site-navbar-link-active {
+  color: #20201e;
+
+  /* 1px larger than normal */
+  font-size: 15px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   FLUID ACTIVE PILL
+========================================================= */
+
+.site-navbar-active-pill {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  border-radius: 999px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.96);
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 1px 2px
+      rgba(18, 18, 16, 0.065),
+
+    0 2px 6px
+      rgba(18, 18, 16, 0.035),
+
+    inset 0 1px 0
+      rgba(255, 255, 255, 1);
+
+  pointer-events: none;
+
+  transition:
+    background 0.35s ease,
+
+    border-color 0.35s ease,
+
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION TEXT
+========================================================= */
+
+.site-navbar-link-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.site-navbar-link:hover
+  .site-navbar-link-content {
+
+  transform:
+    translateY(-0.4px);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.site-navbar-right {
+  justify-self: end;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   THEME SWITCH
+========================================================= */
+
+.site-navbar-theme-toggle {
+  position: relative;
+
+  width: 44px;
+
+  height: 24px;
+
+  flex: 0 0 44px;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(210, 204, 195, 0.9);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    border-color 0.3s ease,
+
+    box-shadow 0.3s ease;
+}
+
+
+.site-navbar-theme-toggle:hover {
+  box-shadow:
+    0 2px 8px
+      rgba(17, 17, 17, 0.08);
+}
+
+
+.site-navbar-theme-toggle:focus-visible {
+  outline: 2px solid
+    rgba(80, 78, 72, 0.35);
+
+  outline-offset: 3px;
+}
+
+
+.site-navbar-theme-track {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+}
+
+
+.site-navbar-theme-knob {
+  position: absolute;
+
+  top: 2px;
+
+  left: 2px;
+
+  width: 18px;
+
+  height: 18px;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(210, 204, 195, 0.75);
+
+  box-shadow:
+    0 1px 4px
+      rgba(17, 17, 17, 0.14);
+}
+
+
+.site-navbar-theme-icon {
+  width: 12px;
+
+  height: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.site-navbar-theme-icon svg {
+  width: 11px;
+
+  height: 11px;
+
+  color: #67655f;
+
+  fill: currentColor;
+}
+
+
+/* =========================================================
+   AVAILABILITY
+========================================================= */
+
+.site-navbar-availability {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 7px;
+
+  /* Increased contrast */
+  color: #5f5b55;
+
+  /* Increased from 8px */
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.site-navbar-status-dot {
+  width: 5px;
+
+  height: 5px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #292926;
+
+  box-shadow:
+    0 0 0 2px
+      rgba(41, 41, 38, 0.065);
+
+  transition:
+    background 0.3s ease,
+
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   EXTERNAL ACTION
+========================================================= */
+
+.site-navbar-external {
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid
+    rgba(220, 215, 207, 0.85);
+
+  border-radius: 50%;
+
+  color: #242320;
+
+  background:
+    rgba(247, 244, 239, 0.7);
+
+  text-decoration: none;
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.85);
+
+  transition:
+    transform 0.3s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+    background 0.25s ease,
+
+    border-color 0.25s ease,
+
+    color 0.25s ease;
+}
+
+
+.site-navbar-external:hover {
+  transform:
+    translateY(-1px)
+    rotate(3deg);
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border-color:
+    rgba(200, 194, 185, 0.9);
+}
+
+
+.site-navbar-external svg {
+  width: 12px;
+
+  height: 12px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.site-navbar-menu-button {
+  display: none;
+
+  position: relative;
+
+  width: 40px;
+
+  height: 40px;
+
+  margin-left: auto;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(220, 215, 207, 0.85);
+
+  border-radius: 50%;
+
+  background:
+    rgba(247, 244, 239, 0.7);
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.85);
+
+  transition:
+    background 0.3s ease,
+
+    border-color 0.3s ease;
+}
+
+
+.site-navbar-menu-button span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 15px;
+
+  height: 1.5px;
+
+  border-radius: 999px;
+
+  background: #242320;
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    transform 0.3s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+    top 0.3s
+      cubic-bezier(0.22, 1, 0.36, 1),
+
+    background 0.3s ease;
+}
+
+
+.site-navbar-menu-button
+  span:first-child {
+
+  top: 15px;
+}
+
+
+.site-navbar-menu-button
+  span:last-child {
+
+  top: 23px;
+}
+
+
+.site-navbar-menu-open
+  span:first-child {
+
+  top: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+
+.site-navbar-menu-open
+  span:last-child {
+
+  top: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.site-navbar-mobile {
+  width: min(1160px, 100%);
+
+  margin: 8px auto 0;
+
+  padding: 7px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  border: 1px solid
+    rgba(20, 20, 18, 0.08);
+
+  border-radius: 20px;
+
+  background:
+    rgba(250, 249, 247, 0.94);
+
+  backdrop-filter:
+    blur(20px)
+    saturate(120%);
+
+  -webkit-backdrop-filter:
+    blur(20px)
+    saturate(120%);
+
+  box-shadow:
+    0 16px 40px
+      rgba(17, 17, 17, 0.08),
+
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.85);
+
+  pointer-events: auto;
+
+  transition:
+    background 0.35s ease,
+
+    border-color 0.35s ease,
+
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.site-navbar-mobile-link {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 49px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: #77736d;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+
+    background 0.3s ease;
+}
+
+
+.site-navbar-mobile-link-active {
+  color: #242320;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.site-navbar-mobile-pill {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #242320;
+
+  box-shadow:
+    0 0 0 3px
+      rgba(36, 35, 32, 0.055);
+
+  transition:
+    background 0.3s ease,
+
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+.site-navbar-mobile-footer {
+  margin-top: 4px;
+
+  padding: 12px 17px 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-top: 1px solid
+    rgba(20, 20, 18, 0.07);
+
+  color: #88837c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  transition:
+    color 0.3s ease,
+
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-inner {
+
+  background:
+    rgba(18, 18, 18, 0.78);
+
+  border-color:
+    rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.06),
+
+    0 10px 30px
+      rgba(0, 0, 0, 0.22),
+
+    0 2px 5px
+      rgba(0, 0, 0, 0.14);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-scrolled
+.site-navbar-inner {
+
+  background:
+    rgba(16, 16, 16, 0.9);
+
+  border-color:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-logo {
+
+  color: #f3f2ee;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-nav {
+
+  border-color:
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    rgba(35, 35, 35, 0.68);
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.045);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-link {
+
+  color: #98958f;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-link:hover {
+
+  color: #e8e6e1;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-link-active {
+
+  color: #f4f3ef;
+
+  font-size: 15px;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-active-pill {
+
+  border-color:
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(66, 66, 66, 0.9);
+
+  box-shadow:
+    0 1px 2px
+      rgba(0, 0, 0, 0.25),
+
+    0 3px 8px
+      rgba(0, 0, 0, 0.18);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-theme-toggle {
+
+  border-color:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-theme-knob {
+
+  border-color:
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 1px 4px
+      rgba(0, 0, 0, 0.4);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-theme-icon svg {
+
+  color: #f4f4fb;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-availability {
+
+  color: #b5b0a8;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-status-dot {
+
+  background: #e8e6df;
+
+  box-shadow:
+    0 0 0 2px
+      rgba(232, 230, 223, 0.08);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-external {
+
+  color: #efede8;
+
+  background:
+    rgba(37, 37, 37, 0.75);
+
+  border-color:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-external:hover {
+
+  background:
+    rgba(55, 55, 55, 0.9);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-menu-button {
+
+  background:
+    rgba(37, 37, 37, 0.75);
+
+  border-color:
+    rgba(255, 255, 255, 0.1);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-menu-button span {
+
+  background: #efede8;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-mobile {
+
+  background:
+    rgba(20, 20, 20, 0.94);
+
+  border-color:
+    rgba(255, 255, 255, 0.09);
+}
+
+
+html[data-theme="dark"]
+.site-navbar-mobile-link {
+
+  color: #99968f;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-mobile-link-active {
+
+  color: #f1efea;
+
+  font-size: 16px;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-mobile-pill {
+
+  background: #efede8;
+}
+
+
+html[data-theme="dark"]
+.site-navbar-mobile-footer {
+
+  color: #77746e;
+
+  border-color:
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .site-navbar {
+
+    padding: 0 16px;
+  }
+
+
+  .site-navbar-inner {
+
+    grid-template-columns:
+      1fr auto;
+
+    padding-left: 20px;
+
+    padding-right: 8px;
+  }
+
+
+  .site-navbar-nav,
+  .site-navbar-right {
+
+    display: none;
+  }
+
+
+  .site-navbar-menu-button {
+
+    display: block;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .site-navbar {
+
+    top: 12px;
+
+    padding: 0 12px;
+  }
+
+
+  .site-navbar-inner {
+
+    height: 54px;
+
+    padding-left: 17px;
+
+    border-radius: 18px;
+  }
+
+
+  .site-navbar-scrolled
+    .site-navbar-inner {
+
+    height: 51px;
+  }
+
+
+  .site-navbar-logo-main {
+
+    font-size: 12px;
+  }
+
+
+  .site-navbar-mobile {
+
+    border-radius: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-navbar-inner,
+
+  .site-navbar-link,
+
+  .site-navbar-link-content,
+
+  .site-navbar-external,
+
+  .site-navbar-menu-button span,
+
+  .site-navbar-theme-toggle,
+
+  .site-navbar-theme-knob,
+
+  .site-navbar-theme-icon {
+
+    transition: none;
+  }
+
+}
+
+
+/* ==================================================
+   KEYBOARD FOCUS
+================================================== */
+
+.site-navbar-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.site-navbar-theme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+.site-navbar-availability:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.site-navbar-mobile-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 999px;
+}

@@ -1,0 +1,66 @@
+/* ==================================================
+   APP / PORTFOLIO
+================================================== */
+
+.portfolio {
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  /* Warm portfolio background */
+  background: #f6f3ee;
+
+  color: #171614;
+
+  overflow-x: clip;
+
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease;
+}
+
+.contact-placeholder {
+  width: 100%;
+  height: 1px;
+}
+
+
+/* ==================================================
+   ABOUT — REMOVE LEFT DECORATIVE LINE
+================================================== */
+
+/*
+   The About section contains:
+   - .about-reading-marker
+   - .marker-line
+   - .about-progress-track
+
+   Keep the marker text if desired, but remove
+   the vertical lines from the left edge.
+*/
+
+.about-reading-marker .marker-line {
+  display: none;
+}
+
+.about-progress-track {
+  display: none;
+}
+
+
+/* ==================================================
+   DARK THEME
+================================================== */
+
+html[data-theme="dark"] .portfolio,
+html.dark .portfolio,
+body.dark .portfolio,
+body[data-theme="dark"] .portfolio {
+  background: #11100f;
+
+  color: #f1ede5;
+}

@@ -1,0 +1,591 @@
+/* ==================================================
+   HERO
+================================================== */
+
+.hero-section {
+  --hero-bg: #f5f4f3;
+  --hero-heading: #111111;
+  --hero-text: #202020;
+  --hero-description: #666666;
+  --hero-muted: #999999;
+  --hero-border: #191919;
+
+  --hero-button-text: #111111;
+  --hero-button-hover-bg: #111111;
+  --hero-button-hover-text: #ffffff;
+
+  --hero-fade-start: rgba(
+    245,
+    244,
+    243,
+    0
+  );
+
+  --hero-fade-end: rgba(
+    245,
+    244,
+    243,
+    1
+  );
+
+  --hero-scroll-line-start: rgba(
+    17,
+    17,
+    17,
+    0.08
+  );
+
+  --hero-scroll-line-end: rgba(
+    17,
+    17,
+    17,
+    0.6
+  );
+
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: 205vh;
+
+  background: var(--hero-bg);
+
+  color: var(--hero-heading);
+}
+
+
+/* ==================================================
+   DARK THEME
+================================================== */
+
+html[data-theme="dark"] .hero-section,
+html.dark .hero-section,
+body.dark .hero-section,
+body[data-theme="dark"] .hero-section {
+  --hero-bg: #0d0d0e;
+  --hero-heading: #f2f1ed;
+  --hero-text: #deddd8;
+  --hero-description: #9b9891;
+  --hero-muted: #77746e;
+  --hero-border: #f2f1ed;
+
+  --hero-button-text: #f2f1ed;
+  --hero-button-hover-bg: #f2f1ed;
+  --hero-button-hover-text: #0d0d0e;
+
+  --hero-fade-start: rgba(
+    13,
+    13,
+    14,
+    0
+  );
+
+  --hero-fade-end: rgba(
+    13,
+    13,
+    14,
+    1
+  );
+
+  --hero-scroll-line-start: rgba(
+    242,
+    241,
+    237,
+    0.08
+  );
+
+  --hero-scroll-line-end: rgba(
+    242,
+    241,
+    237,
+    0.6
+  );
+}
+
+
+/* ==================================================
+   HERO STICKY
+================================================== */
+
+.hero-sticky {
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  will-change:
+    transform,
+    opacity;
+
+  transform: translateZ(0);
+}
+
+
+/* ==================================================
+   SCROLL INDICATOR
+================================================== */
+
+.scroll-indicator {
+  position: absolute;
+
+  top: 100px;
+  left: 50%;
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateX(-50%);
+
+  color: var(--hero-heading);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  will-change: opacity;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+
+  margin-top: 12px;
+
+  transform-origin: top center;
+
+  background: linear-gradient(
+    to bottom,
+    var(--hero-scroll-line-start),
+    var(--hero-scroll-line-end)
+  );
+}
+
+
+/* ==================================================
+   HERO CONTENT
+================================================== */
+
+.hero-content {
+  width: 100%;
+  max-width: 1500px;
+
+  padding: 40px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+.hero-name {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 700px;
+
+  font-size: clamp(
+    4rem,
+    11vw,
+    10.5rem
+  );
+
+  font-weight: 700;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.085em;
+
+  white-space: nowrap;
+
+  overflow: visible;
+
+  color: var(--hero-heading);
+}
+
+.character {
+  display: inline-block;
+
+  transform-origin: center center;
+
+  will-change:
+    transform,
+    opacity;
+
+  backface-visibility: hidden;
+
+  transform-style: preserve-3d;
+}
+
+.character-space {
+  display: inline-block;
+
+  width: 0.25em;
+}
+
+
+/* ==================================================
+   ROLE
+================================================== */
+
+.hero-role {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  margin: 52px 0 0;
+
+  color: var(--hero-text);
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.025em;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+.role-divider {
+  display: inline-block;
+
+  margin: 0 10px;
+
+  color: var(--hero-muted);
+}
+
+
+/* ==================================================
+   BODY DESCRIPTION
+================================================== */
+
+.hero-description {
+  max-width: 700px;
+
+  margin: 20px 0 0;
+
+  color: var(--hero-description);
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  letter-spacing: -0.01em;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 32px;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.hero-button {
+  min-width: 116px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 20px;
+
+  border: 1px solid var(--hero-border);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--hero-button-text);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    color 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.button-icon {
+  font-size: 16px;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.button-arrow {
+  display: inline-block;
+
+  font-size: 15px;
+  line-height: 1;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.hero-button:hover {
+  background: var(--hero-button-hover-bg);
+
+  color: var(--hero-button-hover-text);
+
+  border-color:
+    var(--hero-button-hover-bg);
+}
+
+.hero-button:hover .button-icon {
+  transform: translate(2px, -2px);
+}
+
+.hero-button:hover .button-arrow {
+  transform: translate(3px, 3px);
+}
+
+.hero-button:focus-visible {
+  outline: 2px solid
+    var(--hero-button-text);
+
+  outline-offset: 4px;
+}
+
+
+/* ==================================================
+   HERO TRANSITION
+================================================== */
+
+.hero-bottom-fade {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 180px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    var(--hero-fade-start),
+    var(--hero-fade-end)
+  );
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 195vh;
+  }
+
+  .hero-content {
+    padding: 32px 20px;
+  }
+
+  .hero-name {
+    font-size: clamp(
+      3.3rem,
+      15vw,
+      7rem
+    );
+  }
+
+  .hero-role {
+    margin-top: 40px;
+
+    font-size: 18px;
+  }
+
+  .hero-description {
+    max-width: 560px;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+  }
+
+  .scroll-indicator {
+    top: 88px;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 190vh;
+  }
+
+  .hero-content {
+    padding: 28px 18px;
+  }
+
+  .hero-name {
+    font-size: clamp(
+      2.7rem,
+      15.5vw,
+      5rem
+    );
+  }
+
+  .hero-role {
+    margin-top: 34px;
+
+    font-size: 17px;
+  }
+
+  .role-divider {
+    margin: 0 5px;
+  }
+
+  .hero-description {
+    max-width: 340px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    width: 100%;
+
+    max-width: 300px;
+
+    gap: 8px;
+  }
+
+  .hero-button {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 11px 13px;
+
+    font-size: 12px;
+
+    gap: 7px;
+  }
+
+  .button-icon {
+    font-size: 15px;
+  }
+
+  .button-arrow {
+    font-size: 14px;
+  }
+
+  .hero-bottom-fade {
+    height: 130px;
+  }
+
+  .scroll-indicator {
+    top: 78px;
+
+    font-size: 10px;
+  }
+
+  .scroll-line {
+    height: 38px;
+
+    margin-top: 9px;
+  }
+}
