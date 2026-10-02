@@ -147,7 +147,7 @@ function DesktopLivePreview({ project }) {
         <iframe
           src={project.live}
           title={`${project.title} desktop live preview`}
-          loading="eager"
+          loading="lazy"
           allow="fullscreen"
           tabIndex="-1"
         />
@@ -502,6 +502,7 @@ function Projects() {
       </div>
 
       <div className="projects-inner">
+
         {/* =================================================
             HEADER
             ================================================= */}
@@ -587,6 +588,7 @@ function Projects() {
             BUILD · LEARN · ITERATE
           </span>
         </footer>
+
       </div>
     </section>
   );
