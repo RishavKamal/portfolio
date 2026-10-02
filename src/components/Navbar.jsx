@@ -14,7 +14,9 @@ import {
   IoSunny,
 } from "react-icons/io5";
 
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import {
+  FaArrowUpRightFromSquare,
+} from "react-icons/fa6";
 
 import "./Navbar.css";
 
@@ -59,9 +61,10 @@ function Navbar() {
   const navigationTimerRef =
     useRef(null);
 
-  /*
-   * Initialize theme.
-   */
+  /* ==================================================
+     INITIALIZE THEME
+  ================================================== */
+
   useEffect(() => {
     const savedTheme =
       window.localStorage.getItem(
@@ -95,9 +98,10 @@ function Navbar() {
       initialTheme;
   }, []);
 
-  /*
-   * Apply theme.
-   */
+  /* ==================================================
+     APPLY THEME
+  ================================================== */
+
   useEffect(() => {
     document.documentElement.dataset.theme =
       theme;
@@ -108,9 +112,10 @@ function Navbar() {
     );
   }, [theme]);
 
-  /*
-   * Toggle theme.
-   */
+  /* ==================================================
+     TOGGLE THEME
+  ================================================== */
+
   const toggleTheme = () => {
     setTheme((currentTheme) =>
       currentTheme === "dark"
@@ -119,9 +124,10 @@ function Navbar() {
     );
   };
 
-  /*
-   * Detect active section while scrolling.
-   */
+  /* ==================================================
+     DETECT ACTIVE SECTION WHILE SCROLLING
+  ================================================== */
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -180,9 +186,10 @@ function Navbar() {
     };
   }, []);
 
-  /*
-   * Finish smooth navigation.
-   */
+  /* ==================================================
+     FINISH SMOOTH NAVIGATION
+  ================================================== */
+
   useEffect(() => {
     const finishNavigation = () => {
       if (!isNavigatingRef.current) {
@@ -227,9 +234,10 @@ function Navbar() {
     };
   }, []);
 
-  /*
-   * Smoothly navigate to section.
-   */
+  /* ==================================================
+     SMOOTHLY NAVIGATE TO SECTION
+  ================================================== */
+
   const scrollToSection = (id) => {
     const section =
       document.getElementById(id);
@@ -283,9 +291,10 @@ function Navbar() {
       }, 1200);
   };
 
-  /*
-   * Return to Hero.
-   */
+  /* ==================================================
+     RETURN TO HERO
+  ================================================== */
+
   const handleLogoClick = () => {
     isNavigatingRef.current = false;
 
@@ -327,9 +336,9 @@ function Navbar() {
     >
       <div className="site-navbar-inner">
 
-        {/* =================================
+        {/* ==================================================
             LOGO
-        ================================= */}
+        ================================================== */}
 
         <button
           type="button"
@@ -346,9 +355,9 @@ function Navbar() {
           </span>
         </button>
 
-        {/* =================================
+        {/* ==================================================
             DESKTOP NAVIGATION
-        ================================= */}
+        ================================================== */}
 
         <nav
           className="site-navbar-nav"
@@ -373,8 +382,15 @@ function Navbar() {
               >
                 {isActive && (
                   <m.span
-                    layoutId="navbar-active-pill"
                     className="site-navbar-active-pill"
+                    initial={{
+                      opacity: 0,
+                      scaleX: 0.72,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scaleX: 1,
+                    }}
                     transition={{
                       type: "spring",
                       stiffness: 280,
@@ -392,15 +408,15 @@ function Navbar() {
           })}
         </nav>
 
-        {/* =================================
+        {/* ==================================================
             RIGHT SIDE
-        ================================= */}
+        ================================================== */}
 
         <div className="site-navbar-right">
 
-          {/* =================================
+          {/* ==================================================
               THEME SWITCH
-          ================================= */}
+          ================================================== */}
 
           <m.button
             type="button"
@@ -487,9 +503,9 @@ function Navbar() {
             </m.div>
           </m.button>
 
-          {/* =================================
+          {/* ==================================================
               AVAILABILITY
-          ================================= */}
+          ================================================== */}
 
           <div className="site-navbar-availability">
             <span className="site-navbar-status-dot" />
@@ -499,9 +515,9 @@ function Navbar() {
             </span>
           </div>
 
-          {/* =================================
+          {/* ==================================================
               GITHUB
-          ================================= */}
+          ================================================== */}
 
           <a
             href="https://github.com/RishavKamal"
@@ -514,9 +530,9 @@ function Navbar() {
           </a>
         </div>
 
-        {/* =================================
+        {/* ==================================================
             MOBILE MENU BUTTON
-        ================================= */}
+        ================================================== */}
 
         <button
           type="button"
@@ -540,9 +556,9 @@ function Navbar() {
         </button>
       </div>
 
-      {/* =================================
+      {/* ==================================================
           MOBILE NAVIGATION
-      ================================= */}
+      ================================================== */}
 
       <AnimatePresence>
         {menuOpen && (
@@ -618,8 +634,15 @@ function Navbar() {
 
                     {isActive && (
                       <m.span
-                        layoutId="mobile-navbar-active-pill"
                         className="site-navbar-mobile-pill"
+                        initial={{
+                          opacity: 0,
+                          scaleX: 0.72,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          scaleX: 1,
+                        }}
                         transition={{
                           type: "spring",
                           stiffness: 280,
