@@ -14,8 +14,8 @@
   --about-context: #918a82;
 
   --about-line: rgba(23, 22, 20, 0.14);
-  --about-line-soft: rgba(23, 22, 20, 0.10);
-  --about-line-strong: rgba(23, 22, 20, 0.20);
+  --about-line-soft: rgba(23, 22, 20, 0.1);
+  --about-line-strong: rgba(23, 22, 20, 0.2);
 
   --about-background-number: #171614;
   --about-accent: #567b5d;
@@ -56,7 +56,7 @@ body[data-theme="dark"] .about-section {
   --about-context: #918a82;
 
   --about-line: rgba(241, 237, 229, 0.14);
-  --about-line-soft: rgba(241, 237, 229, 0.10);
+  --about-line-soft: rgba(241, 237, 229, 0.1);
   --about-line-strong: rgba(241, 237, 229, 0.22);
 
   --about-background-number: #f1ede5;
@@ -121,8 +121,7 @@ body[data-theme="dark"] .about-section {
 
   gap: 12px;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   pointer-events: none;
 
@@ -130,7 +129,6 @@ body[data-theme="dark"] .about-section {
     transform,
     opacity;
 }
-
 
 .marker-number {
   color: var(--about-muted);
@@ -142,7 +140,6 @@ body[data-theme="dark"] .about-section {
   letter-spacing: 0.12em;
 }
 
-
 .marker-line {
   width: 1px;
   height: 42px;
@@ -150,7 +147,6 @@ body[data-theme="dark"] .about-section {
   background:
     var(--about-line-strong);
 }
-
 
 .marker-label {
   color: var(--about-muted);
@@ -167,9 +163,6 @@ body[data-theme="dark"] .about-section {
 
 /* ==================================================
    PROGRESS LINE
-
-   Hidden because the current portfolio design
-   does not use the decorative left progress line.
 ================================================== */
 
 .about-progress-track {
@@ -221,7 +214,6 @@ body[data-theme="dark"] .about-section {
     opacity;
 }
 
-
 .about-top-left {
   display: flex;
 
@@ -229,7 +221,6 @@ body[data-theme="dark"] .about-section {
 
   gap: 12px;
 }
-
 
 .section-label,
 .about-small-label {
@@ -244,11 +235,9 @@ body[data-theme="dark"] .about-section {
   line-height: 1.2;
 }
 
-
 .section-label {
   margin: 0;
 }
-
 
 .section-slash {
   color: var(--about-context);
@@ -257,7 +246,6 @@ body[data-theme="dark"] .about-section {
 
   font-weight: 400;
 }
-
 
 .section-context {
   color: var(--about-context);
@@ -268,7 +256,6 @@ body[data-theme="dark"] .about-section {
 
   letter-spacing: 0.15em;
 }
-
 
 .section-index {
   color: var(--about-muted);
@@ -307,16 +294,13 @@ body[data-theme="dark"] .about-section {
   will-change: transform;
 }
 
-
 .statement-line {
   display: block;
 }
 
-
 .statement-offset {
   margin-left: 0.055em;
 }
-
 
 .statement-last {
   display: flex;
@@ -326,7 +310,6 @@ body[data-theme="dark"] .about-section {
   gap: 0.018em;
 }
 
-
 .about-word {
   display: inline-block;
 
@@ -335,7 +318,6 @@ body[data-theme="dark"] .about-section {
     opacity,
     filter;
 }
-
 
 .about-period {
   display: inline-block;
@@ -393,13 +375,11 @@ body[data-theme="dark"] .about-section {
     filter;
 }
 
-
 .about-small-label {
   display: block;
 
   margin-bottom: 30px;
 }
-
 
 .about-copy {
   max-width: 720px;
@@ -468,7 +448,6 @@ body[data-theme="dark"] .about-section {
     var(--about-line-soft);
 }
 
-
 .about-meta span {
   color: var(--about-muted);
 
@@ -489,9 +468,9 @@ body[data-theme="dark"] .about-section {
 
   will-change:
     transform,
-    opacity;
+    opacity,
+    filter;
 }
-
 
 .focus-heading {
   display: flex;
@@ -500,7 +479,6 @@ body[data-theme="dark"] .about-section {
 
   justify-content: space-between;
 }
-
 
 .focus-count {
   color: var(--about-context);
@@ -511,7 +489,6 @@ body[data-theme="dark"] .about-section {
 
   letter-spacing: 0.12em;
 }
-
 
 .focus-line {
   width: 100%;
@@ -535,7 +512,6 @@ body[data-theme="dark"] .about-section {
 
   flex-direction: column;
 }
-
 
 .focus-item {
   position: relative;
@@ -574,7 +550,6 @@ body[data-theme="dark"] .about-section {
     filter;
 }
 
-
 .focus-number {
   color: var(--about-context);
 
@@ -584,7 +559,6 @@ body[data-theme="dark"] .about-section {
 
   letter-spacing: 0.08em;
 }
-
 
 .focus-name {
   color: var(--about-lead);
@@ -604,7 +578,6 @@ body[data-theme="dark"] .about-section {
       1
     );
 }
-
 
 .focus-arrow {
   display: flex;
@@ -638,7 +611,6 @@ body[data-theme="dark"] .about-section {
     );
 }
 
-
 .focus-hover-line {
   position: absolute;
 
@@ -670,12 +642,10 @@ body[data-theme="dark"] .about-section {
   padding-left: 12px;
 }
 
-
 .focus-item:hover .focus-name {
   transform:
     translateX(4px);
 }
-
 
 .focus-item:hover .focus-arrow {
   opacity: 1;
@@ -683,7 +653,6 @@ body[data-theme="dark"] .about-section {
   transform:
     translate(0, 0);
 }
-
 
 .focus-item:hover .focus-hover-line {
   width: 100%;
@@ -711,8 +680,10 @@ body[data-theme="dark"] .about-section {
     1px solid
     var(--about-line-soft);
 
+  will-change:
+    transform,
+    opacity;
 }
-
 
 .bottom-label {
   color: var(--about-muted);
@@ -723,7 +694,6 @@ body[data-theme="dark"] .about-section {
 
   letter-spacing: 0.16em;
 }
-
 
 .bottom-text {
   color: var(--about-text);
@@ -757,7 +727,6 @@ body[data-theme="dark"] .about-section {
     filter;
 }
 
-
 .about-closing span {
   display: block;
 
@@ -776,13 +745,11 @@ body[data-theme="dark"] .about-section {
   letter-spacing: -0.065em;
 }
 
-
 .about-closing span:nth-child(2) {
   margin-right: 0.8em;
 
   color: var(--about-text);
 }
-
 
 .about-closing span:nth-child(3) {
   margin-right: 1.6em;
@@ -796,14 +763,7 @@ body[data-theme="dark"] .about-section {
 ================================================== */
 
 @media (max-width: 768px) {
-
   .about-section {
-    /*
-      Important:
-      let the content determine the scroll distance.
-      The Framer Motion scroll animation remains
-      exactly the same on mobile.
-    */
     min-height: auto;
 
     padding:
@@ -811,7 +771,6 @@ body[data-theme="dark"] .about-section {
       24px
       150px;
   }
-
 
   .about-background-number {
     top: 8%;
@@ -821,11 +780,9 @@ body[data-theme="dark"] .about-section {
     font-size: 32rem;
   }
 
-
   .about-reading-marker {
     display: none;
   }
-
 
   .about-statement {
     font-size: clamp(
@@ -837,11 +794,9 @@ body[data-theme="dark"] .about-section {
     line-height: 0.88;
   }
 
-
   .about-rule {
     margin-top: 90px;
   }
-
 
   .about-lower {
     grid-template-columns: 1fr;
@@ -851,11 +806,9 @@ body[data-theme="dark"] .about-section {
     margin-top: 50px;
   }
 
-
   .about-description {
     max-width: 100%;
   }
-
 
   .about-description p {
     font-size: 18px;
@@ -863,23 +816,19 @@ body[data-theme="dark"] .about-section {
     line-height: 1.75;
   }
 
-
   .about-description .about-lead {
     font-size: 21px;
 
     line-height: 1.65;
   }
 
-
   .about-focus {
     width: 100%;
   }
 
-
   .about-bottom {
     margin-top: 100px;
   }
-
 
   .about-closing {
     align-items: flex-end;
@@ -889,7 +838,6 @@ body[data-theme="dark"] .about-section {
     margin-right: 0;
   }
 
-
   .about-closing span {
     font-size: clamp(
       2.5rem,
@@ -897,7 +845,6 @@ body[data-theme="dark"] .about-section {
       4.5rem
     );
   }
-
 
   .focus-name {
     font-size: 16px;
@@ -910,7 +857,6 @@ body[data-theme="dark"] .about-section {
 ================================================== */
 
 @media (max-width: 480px) {
-
   .about-section {
     min-height: auto;
 
@@ -920,7 +866,6 @@ body[data-theme="dark"] .about-section {
       120px;
   }
 
-
   .about-background-number {
     top: 11%;
 
@@ -929,21 +874,17 @@ body[data-theme="dark"] .about-section {
     font-size: 22rem;
   }
 
-
   .about-top {
     margin-bottom: 32px;
   }
-
 
   .about-top-left {
     gap: 9px;
   }
 
-
   .section-context {
     font-size: 9px;
   }
-
 
   .about-statement {
     font-size: 3.45rem;
@@ -953,16 +894,13 @@ body[data-theme="dark"] .about-section {
     letter-spacing: -0.078em;
   }
 
-
   .statement-offset {
     margin-left: 0.025em;
   }
 
-
   .about-rule {
     margin-top: 70px;
   }
-
 
   .about-lower {
     gap: 65px;
@@ -970,20 +908,17 @@ body[data-theme="dark"] .about-section {
     margin-top: 42px;
   }
 
-
   .about-small-label {
     font-size: 10px;
 
     margin-bottom: 24px;
   }
 
-
   .about-description p {
     font-size: 17px;
 
     line-height: 1.75;
   }
-
 
   .about-description .about-lead {
     font-size: 19px;
@@ -992,7 +927,6 @@ body[data-theme="dark"] .about-section {
 
     margin-bottom: 28px;
   }
-
 
   .about-meta {
     flex-direction: column;
@@ -1004,23 +938,19 @@ body[data-theme="dark"] .about-section {
     margin-top: 42px;
   }
 
-
   .focus-item {
     min-height: 62px;
 
     padding: 14px 0;
   }
 
-
   .focus-name {
     font-size: 15px;
   }
 
-
   .focus-arrow {
     font-size: 14px;
   }
-
 
   .about-bottom {
     flex-direction: column;
@@ -1032,11 +962,9 @@ body[data-theme="dark"] .about-section {
     margin-top: 85px;
   }
 
-
   .bottom-text {
     font-size: 12px;
   }
-
 
   .about-closing {
     align-items: flex-start;
@@ -1044,20 +972,17 @@ body[data-theme="dark"] .about-section {
     margin-top: 85px;
   }
 
-
   .about-closing span {
     font-size: 2.7rem;
 
     line-height: 0.98;
   }
 
-
   .about-closing span:nth-child(2) {
     margin-left: 0.5em;
 
     margin-right: 0;
   }
-
 
   .about-closing span:nth-child(3) {
     margin-left: 1em;
@@ -1072,27 +997,22 @@ body[data-theme="dark"] .about-section {
 ================================================== */
 
 @media (max-width: 360px) {
-
   .about-section {
     padding-left: 18px;
     padding-right: 18px;
   }
 
-
   .about-statement {
     font-size: 3.15rem;
   }
-
 
   .about-description .about-lead {
     font-size: 18px;
   }
 
-
   .about-description p {
     font-size: 16px;
   }
-
 
   .about-closing span {
     font-size: 2.45rem;
@@ -1105,15 +1025,12 @@ body[data-theme="dark"] .about-section {
 ================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
   .about-section *,
   .about-section *::before,
   .about-section *::after {
     transition: none !important;
-
     animation: none !important;
   }
-
 
   .about-word,
   .about-description,
@@ -1124,22 +1041,18 @@ body[data-theme="dark"] .about-section {
     transform: none !important;
   }
 
-
   .focus-item:hover {
     padding-left: 0;
   }
-
 
   .focus-item:hover .focus-name {
     transform: none;
   }
 
-
   .focus-item:hover .focus-arrow {
     opacity: 0;
     transform: none;
   }
-
 
   .focus-item:hover .focus-hover-line {
     width: 0;

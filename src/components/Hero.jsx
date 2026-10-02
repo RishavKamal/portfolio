@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   useScroll,
   useSpring,
   useTransform,
@@ -70,7 +70,7 @@ function Character({
   }
 
   return (
-    <motion.span
+    <m.span
       className="character"
       style={{
         x,
@@ -81,7 +81,7 @@ function Character({
       }}
     >
       {char}
-    </motion.span>
+    </m.span>
   );
 }
 
@@ -296,7 +296,7 @@ function Hero() {
       ref={heroRef}
       className="hero-section"
     >
-      <motion.div
+      <m.div
         className="hero-sticky"
         style={{
           opacity: heroOpacity,
@@ -304,7 +304,7 @@ function Hero() {
           scale: heroScale,
         }}
       >
-        <motion.div
+        <m.div
           className="scroll-indicator"
           style={{
             opacity:
@@ -315,7 +315,7 @@ function Hero() {
             Scroll to explore
           </span>
 
-          <motion.div
+          <m.div
             className="scroll-line"
             animate={{
               scaleY: [1, 1.25, 1],
@@ -331,7 +331,7 @@ function Hero() {
               ease: "easeInOut",
             }}
           />
-        </motion.div>
+        </m.div>
 
         <div className="hero-content">
           <h1 className="hero-name">
@@ -352,7 +352,7 @@ function Hero() {
             )}
           </h1>
 
-          <motion.p
+          <m.p
             className="hero-role"
             style={{
               opacity: roleOpacity,
@@ -371,9 +371,9 @@ function Hero() {
             <span>
               Java & Full-Stack Developer
             </span>
-          </motion.p>
+          </m.p>
 
-          <motion.p
+          <m.p
             className="hero-description"
             style={{
               opacity:
@@ -391,9 +391,9 @@ function Hero() {
             and modern full-stack web
             technologies including React
             and SQL.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             className="hero-buttons"
             style={{
               opacity:
@@ -402,7 +402,7 @@ function Hero() {
               scale: buttonsScale,
             }}
           >
-            <motion.a
+            <m.a
               href="#projects"
               className="hero-button"
               onClick={
@@ -427,9 +427,9 @@ function Hero() {
               >
                 ↘
               </span>
-            </motion.a>
+            </m.a>
 
-            <motion.a
+            <m.a
               href="https://github.com/RishavKamal"
               target="_blank"
               rel="noopener noreferrer"
@@ -458,12 +458,12 @@ function Hero() {
               >
                 ↗
               </span>
-            </motion.a>
-          </motion.div>
+            </m.a>
+          </m.div>
         </div>
 
         <div className="hero-bottom-fade" />
-      </motion.div>
+      </m.div>
     </section>
   );
 }

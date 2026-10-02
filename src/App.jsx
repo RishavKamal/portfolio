@@ -1,3 +1,5 @@
+import { LazyMotion, domMax } from "framer-motion";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,22 +11,16 @@ import "./App.css";
 
 function App() {
   return (
-    <main
-      id="top"
-      className="portfolio"
-    >
-      <Navbar />
-
-      <Hero />
-
-      <About />
-
-      <Projects />
-
-      <Skills />
-
-      <Contact />
-    </main>
+    <LazyMotion features={domMax}>
+      <main id="top" className="portfolio">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+    </LazyMotion>
   );
 }
 

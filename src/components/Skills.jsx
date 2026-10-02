@@ -1,6 +1,6 @@
 import {
   AnimatePresence,
-  motion,
+  m,
   useScroll,
   useSpring,
   useTransform,
@@ -101,7 +101,8 @@ function Skills() {
   const skillsRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [timerResetKey, setTimerResetKey] = useState(0);
+  const [timerResetKey, setTimerResetKey] =
+    useState(0);
 
   const allSkills = useMemo(
     () =>
@@ -114,24 +115,30 @@ function Skills() {
     [],
   );
 
-  const activeSkill = allSkills[activeIndex];
+  const activeSkill =
+    allSkills[activeIndex];
 
-  const ActiveIcon = activeSkill.icon;
+  const ActiveIcon =
+    activeSkill.icon;
 
   /* ==================================================
      AUTOMATIC SKILL ROTATION
   ================================================== */
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      setActiveIndex(
-        (current) =>
-          (current + 1) % allSkills.length,
-      );
-    }, 2600);
+    const timeoutId =
+      window.setTimeout(() => {
+        setActiveIndex(
+          (current) =>
+            (current + 1) %
+            allSkills.length,
+        );
+      }, 2600);
 
     return () => {
-      window.clearTimeout(timeoutId);
+      window.clearTimeout(
+        timeoutId,
+      );
     };
   }, [
     activeIndex,
@@ -143,7 +150,9 @@ function Skills() {
      MANUAL SELECTION
   ================================================== */
 
-  const handleSkillClick = (index) => {
+  const handleSkillClick = (
+    index,
+  ) => {
     setActiveIndex(index);
 
     setTimerResetKey(
@@ -165,68 +174,79 @@ function Skills() {
     ],
   });
 
-  const smoothProgress = useSpring(
-    scrollYProgress,
-    {
-      stiffness: 80,
-      damping: 25,
-      mass: 0.5,
-    },
-  );
+  const smoothProgress =
+    useSpring(
+      scrollYProgress,
+      {
+        stiffness: 80,
+        damping: 25,
+        mass: 0.5,
+      },
+    );
 
   /* ==================================================
      HEADER ANIMATION
   ================================================== */
 
-  const headingOpacity = useTransform(
-    smoothProgress,
-    [0, 0.18],
-    [0, 1],
-  );
+  const headingOpacity =
+    useTransform(
+      smoothProgress,
+      [0, 0.18],
+      [0, 1],
+    );
 
-  const headingY = useTransform(
-    smoothProgress,
-    [0, 0.18],
-    [36, 0],
-  );
+  const headingY =
+    useTransform(
+      smoothProgress,
+      [0, 0.18],
+      [36, 0],
+    );
 
-  const headingBlur = useTransform(
-    smoothProgress,
-    [0, 0.18],
-    [7, 0],
-  );
+  const headingBlur =
+    useTransform(
+      smoothProgress,
+      [0, 0.18],
+      [7, 0],
+    );
 
-  const headingFilter = useTransform(
-    headingBlur,
-    (value) => `blur(${value}px)`,
-  );
+  const headingFilter =
+    useTransform(
+      headingBlur,
+      (value) =>
+        `blur(${value}px)`,
+    );
 
   /* ==================================================
      CONTENT ANIMATION
   ================================================== */
 
-  const contentOpacity = useTransform(
-    smoothProgress,
-    [0.08, 0.28],
-    [0, 1],
-  );
+  const contentOpacity =
+    useTransform(
+      smoothProgress,
+      [0.08, 0.28],
+      [0, 1],
+    );
 
-  const contentY = useTransform(
-    smoothProgress,
-    [0.08, 0.28],
-    [40, 0],
-  );
+  const contentY =
+    useTransform(
+      smoothProgress,
+      [0.08, 0.28],
+      [40, 0],
+    );
 
-  const contentBlur = useTransform(
-    smoothProgress,
-    [0.08, 0.28],
-    [6, 0],
-  );
+  const contentBlur =
+    useTransform(
+      smoothProgress,
+      [0.08, 0.28],
+      [6, 0],
+    );
 
-  const contentFilter = useTransform(
-    contentBlur,
-    (value) => `blur(${value}px)`,
-  );
+  const contentFilter =
+    useTransform(
+      contentBlur,
+      (value) =>
+        `blur(${value}px)`,
+    );
 
   return (
     <section
@@ -249,32 +269,38 @@ function Skills() {
           <div className="skills-loop-label">
             <span className="skills-loop-label-line" />
 
-            <span>SKILLS</span>
+            <span>
+              SKILLS
+            </span>
 
             <span className="skills-loop-label-index">
               03
             </span>
           </div>
 
-          <motion.h2
+          <m.h2
             style={{
-              opacity: headingOpacity,
+              opacity:
+                headingOpacity,
               y: headingY,
-              filter: headingFilter,
+              filter:
+                headingFilter,
             }}
           >
             What I work with.
-          </motion.h2>
+          </m.h2>
         </header>
 
         {/* MAIN CONTENT */}
 
-        <motion.div
+        <m.div
           className="skills-loop-content"
           style={{
-            opacity: contentOpacity,
+            opacity:
+              contentOpacity,
             y: contentY,
-            filter: contentFilter,
+            filter:
+              contentFilter,
           }}
         >
 
@@ -287,7 +313,9 @@ function Skills() {
 
             <span className="skills-loop-counter">
               <strong>
-                {String(activeIndex + 1).padStart(
+                {String(
+                  activeIndex + 1,
+                ).padStart(
                   2,
                   "0",
                 )}
@@ -296,7 +324,9 @@ function Skills() {
               <span>/</span>
 
               <span>
-                {String(allSkills.length).padStart(
+                {String(
+                  allSkills.length,
+                ).padStart(
                   2,
                   "0",
                 )}
@@ -315,26 +345,29 @@ function Skills() {
                 mode="popLayout"
                 initial={false}
               >
-                <motion.div
+                <m.div
                   key={activeIndex}
                   className="skills-loop-active-wrapper"
 
                   initial={{
                     opacity: 0,
                     y: "22%",
-                    filter: "blur(4px)",
+                    filter:
+                      "blur(4px)",
                   }}
 
                   animate={{
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
+                    filter:
+                      "blur(0px)",
                   }}
 
                   exit={{
                     opacity: 0,
                     y: "-22%",
-                    filter: "blur(4px)",
+                    filter:
+                      "blur(4px)",
                   }}
 
                   transition={{
@@ -363,7 +396,7 @@ function Skills() {
                       {activeSkill.name}
                     </h3>
                   </div>
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
 
@@ -371,7 +404,9 @@ function Skills() {
 
             <div className="skills-loop-description">
               <span className="skills-loop-description-index">
-                {String(activeIndex + 1).padStart(
+                {String(
+                  activeIndex + 1,
+                ).padStart(
                   2,
                   "0",
                 )}
@@ -393,25 +428,34 @@ function Skills() {
 
           <div className="skills-loop-index">
             {allSkills.map(
-              (skill, index) => (
+              (
+                skill,
+                index,
+              ) => (
                 <button
                   key={skill.name}
                   type="button"
                   className={`skills-loop-index-item ${
-                    index === activeIndex
+                    index ===
+                    activeIndex
                       ? "is-active"
                       : ""
                   }`}
                   onClick={() =>
-                    handleSkillClick(index)
+                    handleSkillClick(
+                      index,
+                    )
                   }
                   aria-label={`Show ${skill.name}`}
                   aria-pressed={
-                    index === activeIndex
+                    index ===
+                    activeIndex
                   }
                 >
                   <span className="skills-loop-index-number">
-                    {String(index + 1).padStart(
+                    {String(
+                      index + 1,
+                    ).padStart(
                       2,
                       "0",
                     )}
@@ -443,8 +487,7 @@ function Skills() {
               Click a technology to explore
             </span>
           </div>
-
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

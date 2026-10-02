@@ -1,6 +1,6 @@
 import {
   AnimatePresence,
-  motion,
+  m,
 } from "framer-motion";
 
 import {
@@ -372,7 +372,7 @@ function Navbar() {
                 }
               >
                 {isActive && (
-                  <motion.span
+                  <m.span
                     layoutId="navbar-active-pill"
                     className="site-navbar-active-pill"
                     transition={{
@@ -402,7 +402,7 @@ function Navbar() {
               THEME SWITCH
           ================================= */}
 
-          <motion.button
+          <m.button
             type="button"
             className="site-navbar-theme-toggle"
             onClick={toggleTheme}
@@ -421,7 +421,7 @@ function Navbar() {
               scale: 0.94,
             }}
           >
-            <motion.div
+            <m.div
               className="site-navbar-theme-track"
               animate={{
                 backgroundColor: isDark
@@ -433,7 +433,7 @@ function Navbar() {
               }}
             />
 
-            <motion.div
+            <m.div
               className="site-navbar-theme-knob"
               animate={{
                 x: isDark ? 20 : 0,
@@ -451,7 +451,7 @@ function Navbar() {
                 mode="wait"
                 initial={false}
               >
-                <motion.span
+                <m.span
                   key={
                     isDark
                       ? "moon"
@@ -482,10 +482,10 @@ function Navbar() {
                   ) : (
                     <IoSunny />
                   )}
-                </motion.span>
+                </m.span>
               </AnimatePresence>
-            </motion.div>
-          </motion.button>
+            </m.div>
+          </m.button>
 
           {/* =================================
               AVAILABILITY
@@ -546,7 +546,7 @@ function Navbar() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav
+          <m.nav
             className="site-navbar-mobile"
             initial={{
               opacity: 0,
@@ -579,7 +579,7 @@ function Navbar() {
                   activeSection === item.id;
 
                 return (
-                  <motion.button
+                  <m.button
                     type="button"
                     key={item.id}
                     initial={{
@@ -617,7 +617,7 @@ function Navbar() {
                     </span>
 
                     {isActive && (
-                      <motion.span
+                      <m.span
                         layoutId="mobile-navbar-active-pill"
                         className="site-navbar-mobile-pill"
                         transition={{
@@ -628,7 +628,7 @@ function Navbar() {
                         }}
                       />
                     )}
-                  </motion.button>
+                  </m.button>
                 );
               },
             )}
@@ -640,11 +640,11 @@ function Navbar() {
                 AVAILABLE FOR WORK
               </span>
             </div>
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
     </header>
   );
 }
 
-export default Navbar;1
+export default Navbar;

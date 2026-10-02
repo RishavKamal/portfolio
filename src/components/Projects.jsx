@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   useScroll,
   useSpring,
   useTransform,
@@ -67,6 +67,7 @@ function DesktopLivePreview({ project }) {
    * 1280px gives us a realistic desktop viewport while
    * avoiding the extra empty area visible with 1440px.
    */
+
   const DESKTOP_WIDTH = 1280;
   const DESKTOP_HEIGHT = 800;
 
@@ -291,7 +292,7 @@ function ProjectRow({
     );
 
   return (
-    <motion.article
+    <m.article
       className="project-row"
       style={{
         opacity,
@@ -423,7 +424,7 @@ function ProjectRow({
       {/* ACTIVE LINE */}
 
       <span className="project-active-line" />
-    </motion.article>
+    </m.article>
   );
 }
 
@@ -505,7 +506,7 @@ function Projects() {
             HEADER
             ================================================= */}
 
-        <motion.header
+        <m.header
           className="projects-header"
           style={{
             opacity:
@@ -550,7 +551,7 @@ function Projects() {
 
             <span className="header-side-line" />
           </div>
-        </motion.header>
+        </m.header>
 
         {/* =================================================
             PROJECT LIST

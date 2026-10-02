@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   useScroll,
   useSpring,
   useTransform,
@@ -18,19 +18,19 @@ function AboutWord({
   const opacity = useTransform(
     progress,
     [start, end],
-    [0.08, 1],
+    [0.45, 1],
   );
 
   const y = useTransform(
     progress,
     [start, end],
-    [48, 0],
+    [32, 0],
   );
 
   const blur = useTransform(
     progress,
     [start, end],
-    [10, 0],
+    [6, 0],
   );
 
   const filter = useTransform(
@@ -39,7 +39,7 @@ function AboutWord({
   );
 
   return (
-    <motion.span
+    <m.span
       className="about-word"
       style={{
         opacity,
@@ -48,7 +48,7 @@ function AboutWord({
       }}
     >
       {children}
-    </motion.span>
+    </m.span>
   );
 }
 
@@ -60,20 +60,20 @@ function FocusItem({
 }) {
   const opacity = useTransform(
     progress,
-    [start, start + 0.07],
+    [start, start + 0.045],
     [0, 1],
   );
 
   const y = useTransform(
     progress,
-    [start, start + 0.07],
-    [22, 0],
+    [start, start + 0.045],
+    [18, 0],
   );
 
   const blur = useTransform(
     progress,
-    [start, start + 0.07],
-    [5, 0],
+    [start, start + 0.045],
+    [4, 0],
   );
 
   const filter = useTransform(
@@ -82,7 +82,7 @@ function FocusItem({
   );
 
   return (
-    <motion.div
+    <m.div
       className="focus-item"
       style={{
         opacity,
@@ -103,7 +103,7 @@ function FocusItem({
       </span>
 
       <span className="focus-hover-line" />
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -136,25 +136,33 @@ function About() {
     };
   }, []);
 
+  /*
+   * The About section now reaches its useful
+   * animation range earlier in the viewport.
+   *
+   * This prevents the lower content from waiting
+   * until the user has almost passed the section.
+   */
+
   const { scrollYProgress } = useScroll({
     target: aboutRef,
     offset: isMobile
       ? [
-          "start 1.5",
-          "end 0.45",
+          "start 1.25",
+          "end 0.55",
         ]
       : [
-          "start 0.9",
-          "end 0.25",
+          "start 0.82",
+          "end 0.30",
         ],
   });
 
   const smoothProgress = useSpring(
     scrollYProgress,
     {
-      stiffness: isMobile ? 120 : 80,
-      damping: isMobile ? 30 : 25,
-      mass: isMobile ? 0.35 : 0.5,
+      stiffness: isMobile ? 125 : 90,
+      damping: isMobile ? 30 : 27,
+      mass: isMobile ? 0.35 : 0.45,
     },
   );
 
@@ -166,135 +174,180 @@ function About() {
     [0, 1],
   );
 
-  const backgroundNumberY =
-    useTransform(
-      animationProgress,
-      [0, 1],
-      [90, -90],
-    );
+  /*
+   * --------------------------------
+   * BACKGROUND
+   * --------------------------------
+   */
 
-  const backgroundNumberScale =
-    useTransform(
-      animationProgress,
-      [0, 0.5, 1],
-      [0.96, 1, 1.04],
-    );
+  const backgroundNumberY = useTransform(
+    animationProgress,
+    [0, 1],
+    [70, -70],
+  );
 
-  const backgroundNumberOpacity =
-    useTransform(
-      animationProgress,
-      [0, 0.22, 0.7, 1],
-      [0, 0.035, 0.025, 0],
-    );
+  const backgroundNumberScale = useTransform(
+    animationProgress,
+    [0, 0.5, 1],
+    [0.97, 1, 1.03],
+  );
 
-  const markerOpacity =
-    useTransform(
-      animationProgress,
-      [0, 0.12, 0.82, 1],
-      [0, 1, 1, 0],
-    );
+  const backgroundNumberOpacity = useTransform(
+    animationProgress,
+    [0, 0.18, 0.68, 1],
+    [0, 0.035, 0.025, 0],
+  );
+
+  /*
+   * --------------------------------
+   * SIDE READING MARKER
+   * --------------------------------
+   */
+
+  const markerOpacity = useTransform(
+    animationProgress,
+    [0, 0.10, 0.78, 1],
+    [0, 1, 1, 0],
+  );
 
   const markerY = useTransform(
     animationProgress,
     [0, 1],
-    [20, -20],
+    [16, -16],
   );
 
-  const headerOpacity =
-    useTransform(
-      animationProgress,
-      [0, 0.12],
-      [0, 1],
-    );
+  /*
+   * --------------------------------
+   * HEADER
+   * --------------------------------
+   */
+
+  const headerOpacity = useTransform(
+    animationProgress,
+    [0, 0.10],
+    [0, 1],
+  );
 
   const headerY = useTransform(
     animationProgress,
-    [0, 0.12],
-    [18, 0],
+    [0, 0.10],
+    [14, 0],
   );
+
+  /*
+   * --------------------------------
+   * MAIN STATEMENT
+   * --------------------------------
+   */
 
   const statementX = useTransform(
     animationProgress,
-    [0, 0.5],
-    [35, 0],
+    [0, 0.42],
+    [28, 0],
   );
+
+  /*
+   * --------------------------------
+   * DIVIDER
+   * --------------------------------
+   */
 
   const ruleScale = useTransform(
     animationProgress,
-    [0.18, 0.36],
+    [0.15, 0.28],
     [0, 1],
   );
 
-  const descriptionOpacity =
-    useTransform(
-      animationProgress,
-      [0.36, 0.52],
-      [0, 1],
-    );
+  /*
+   * --------------------------------
+   * LOWER CONTENT
+   *
+   * Both columns deliberately enter
+   * during the middle of the section.
+   * --------------------------------
+   */
 
-  const descriptionY = useTransform(
+  const lowerOpacity = useTransform(
     animationProgress,
-    [0.36, 0.52],
-    [38, 0],
-  );
-
-  const descriptionBlur =
-    useTransform(
-      animationProgress,
-      [0.36, 0.52],
-      [7, 0],
-    );
-
-  const descriptionFilter =
-    useTransform(
-      descriptionBlur,
-      (value) => `blur(${value}px)`,
-    );
-
-  const focusOpacity = useTransform(
-    animationProgress,
-    [0.46, 0.58],
+    [0.30, 0.45],
     [0, 1],
   );
 
-  const focusY = useTransform(
+  const lowerY = useTransform(
     animationProgress,
-    [0.46, 0.58],
+    [0.30, 0.45],
     [34, 0],
   );
 
-  const focusLineScale =
-    useTransform(
-      animationProgress,
-      [0.48, 0.60],
-      [0, 1],
-    );
+  const lowerBlur = useTransform(
+    animationProgress,
+    [0.30, 0.45],
+    [4, 0],
+  );
 
-  const closingOpacity =
-    useTransform(
-      animationProgress,
-      [0.68, 0.82],
-      [0, 1],
-    );
+  const lowerFilter = useTransform(
+    lowerBlur,
+    (value) => `blur(${value}px)`,
+  );
+
+  /*
+   * --------------------------------
+   * RIGHT SIDE LINE
+   * --------------------------------
+   */
+
+  const focusLineScale = useTransform(
+    animationProgress,
+    [0.34, 0.44],
+    [0, 1],
+  );
+
+  /*
+   * --------------------------------
+   * CURRENTLY BUILDING
+   * --------------------------------
+   */
+
+  const bottomOpacity = useTransform(
+    animationProgress,
+    [0.52, 0.62],
+    [0, 1],
+  );
+
+  const bottomY = useTransform(
+    animationProgress,
+    [0.52, 0.62],
+    [18, 0],
+  );
+
+  /*
+   * --------------------------------
+   * CLOSING
+   * --------------------------------
+   */
+
+  const closingOpacity = useTransform(
+    animationProgress,
+    [0.68, 0.80],
+    [0, 1],
+  );
 
   const closingY = useTransform(
     animationProgress,
-    [0.68, 0.82],
-    [30, 0],
+    [0.68, 0.80],
+    [24, 0],
   );
 
-  const closingBlur =
-    useTransform(
-      animationProgress,
-      [0.68, 0.82],
-      [6, 0],
-    );
+  const closingBlur = useTransform(
+    animationProgress,
+    [0.68, 0.80],
+    [3, 0],
+  );
 
-  const closingFilter =
-    useTransform(
-      closingBlur,
-      (value) => `blur(${value}px)`,
-    );
+  const closingFilter = useTransform(
+    closingBlur,
+    (value) => `blur(${value}px)`,
+  );
 
   return (
     <section
@@ -302,7 +355,7 @@ function About() {
       ref={aboutRef}
       className="about-section"
     >
-      <motion.div
+      <m.div
         className="about-background-number"
         style={{
           y: backgroundNumberY,
@@ -311,9 +364,9 @@ function About() {
         }}
       >
         01
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         className="about-reading-marker"
         style={{
           opacity: markerOpacity,
@@ -329,10 +382,10 @@ function About() {
         <span className="marker-label">
           ABOUT
         </span>
-      </motion.div>
+      </m.div>
 
       <div className="about-progress-track">
-        <motion.div
+        <m.div
           className="about-progress-bar"
           style={{
             scaleY: animationProgress,
@@ -341,7 +394,9 @@ function About() {
       </div>
 
       <div className="about-inner">
-        <motion.div
+        {/* HEADER */}
+
+        <m.div
           className="about-top"
           style={{
             opacity: headerOpacity,
@@ -365,9 +420,11 @@ function About() {
           <span className="section-index">
             01
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.h2
+        {/* MAIN STATEMENT */}
+
+        <m.h2
           className="about-statement"
           style={{
             x: statementX,
@@ -376,8 +433,8 @@ function About() {
           <span className="statement-line">
             <AboutWord
               progress={animationProgress}
-              start={0.04}
-              end={0.20}
+              start={0.03}
+              end={0.16}
             >
               Building
             </AboutWord>
@@ -386,8 +443,8 @@ function About() {
           <span className="statement-line statement-offset">
             <AboutWord
               progress={animationProgress}
-              start={0.10}
-              end={0.27}
+              start={0.08}
+              end={0.22}
             >
               strong
             </AboutWord>
@@ -396,8 +453,8 @@ function About() {
           <span className="statement-line statement-last">
             <AboutWord
               progress={animationProgress}
-              start={0.16}
-              end={0.34}
+              start={0.13}
+              end={0.28}
             >
               foundations
             </AboutWord>
@@ -406,22 +463,28 @@ function About() {
               .
             </span>
           </span>
-        </motion.h2>
+        </m.h2>
 
-        <motion.div
+        {/* DIVIDER */}
+
+        <m.div
           className="about-rule"
           style={{
             scaleX: ruleScale,
           }}
         />
 
+        {/* LOWER TWO-COLUMN CONTENT */}
+
         <div className="about-lower">
-          <motion.div
+          {/* LEFT SIDE */}
+
+          <m.div
             className="about-description"
             style={{
-              opacity: descriptionOpacity,
-              y: descriptionY,
-              filter: descriptionFilter,
+              opacity: lowerOpacity,
+              y: lowerY,
+              filter: lowerFilter,
             }}
           >
             <span className="about-small-label">
@@ -479,13 +542,16 @@ function About() {
                 COMPUTER SCIENCE
               </span>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          {/* RIGHT SIDE */}
+
+          <m.div
             className="about-focus"
             style={{
-              opacity: focusOpacity,
-              y: focusY,
+              opacity: lowerOpacity,
+              y: lowerY,
+              filter: lowerFilter,
             }}
           >
             <div className="focus-heading">
@@ -498,7 +564,7 @@ function About() {
               </span>
             </div>
 
-            <motion.div
+            <m.div
               className="focus-line"
               style={{
                 scaleX: focusLineScale,
@@ -510,51 +576,54 @@ function About() {
                 number="01"
                 name="Java"
                 progress={animationProgress}
-                start={0.44}
+                start={0.38}
               />
 
               <FocusItem
                 number="02"
                 name="Data Structures & Algorithms"
                 progress={animationProgress}
-                start={0.46}
+                start={0.405}
               />
 
               <FocusItem
                 number="03"
                 name="Spring Boot"
                 progress={animationProgress}
-                start={0.48}
+                start={0.43}
               />
 
               <FocusItem
                 number="04"
                 name="React"
                 progress={animationProgress}
-                start={0.50}
+                start={0.455}
               />
 
               <FocusItem
                 number="05"
                 name="SQL"
                 progress={animationProgress}
-                start={0.52}
+                start={0.48}
               />
 
               <FocusItem
                 number="06"
                 name="Node.js & Express"
                 progress={animationProgress}
-                start={0.54}
+                start={0.505}
               />
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div
+        {/* CURRENTLY BUILDING */}
+
+        <m.div
           className="about-bottom"
           style={{
-            opacity: descriptionOpacity,
+            opacity: bottomOpacity,
+            y: bottomY,
           }}
         >
           <span className="bottom-label">
@@ -565,9 +634,11 @@ function About() {
             client projects · learning ·
             experimenting
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        {/* CLOSING */}
+
+        <m.div
           className="about-closing"
           style={{
             opacity: closingOpacity,
@@ -587,7 +658,7 @@ function About() {
             Improving through real-world
             projects.
           </span>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

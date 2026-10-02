@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   useScroll,
   useSpring,
   useTransform,
@@ -124,11 +124,12 @@ function Contact() {
      DESCRIPTION
   ================================================== */
 
-  const descriptionOpacity = useTransform(
-    smoothProgress,
-    [0.30, 0.45],
-    [0, 1],
-  );
+  const descriptionOpacity =
+    useTransform(
+      smoothProgress,
+      [0.30, 0.45],
+      [0, 1],
+    );
 
   const descriptionY = useTransform(
     smoothProgress,
@@ -200,7 +201,7 @@ function Contact() {
           BACKGROUND NUMBER
       ================================================== */}
 
-      <motion.div
+      <m.div
         className="contact-background-number"
         style={{
           opacity: useTransform(
@@ -217,7 +218,7 @@ function Contact() {
         aria-hidden="true"
       >
         04
-      </motion.div>
+      </m.div>
 
       <div className="contact-inner">
 
@@ -225,7 +226,7 @@ function Contact() {
             HEADER
         ================================================== */}
 
-        <motion.div
+        <m.div
           className="contact-top"
           style={{
             opacity: headerOpacity,
@@ -252,7 +253,7 @@ function Contact() {
           <span className="contact-section-index">
             04
           </span>
-        </motion.div>
+        </m.div>
 
         {/* ==================================================
             MAIN CONTENT
@@ -264,7 +265,7 @@ function Contact() {
               HEADING
           ================================================== */}
 
-          <motion.h2
+          <m.h2
             className="contact-heading"
             style={{
               opacity: headingOpacity,
@@ -283,13 +284,13 @@ function Contact() {
             <span className="contact-heading-last">
               useful.
             </span>
-          </motion.h2>
+          </m.h2>
 
           {/* ==================================================
               DESCRIPTION
           ================================================== */}
 
-          <motion.div
+          <m.div
             className="contact-description"
             style={{
               opacity: descriptionOpacity,
@@ -308,13 +309,13 @@ function Contact() {
               build, and contribute through software
               development.
             </span>
-          </motion.div>
+          </m.div>
 
           {/* ==================================================
               DETAILS
           ================================================== */}
 
-          <motion.div
+          <m.div
             className="contact-details"
             style={{
               opacity: detailsOpacity,
@@ -357,7 +358,9 @@ function Contact() {
                   rel="noopener noreferrer"
                   aria-label="Open Rishav Kamal's GitHub profile"
                 >
-                  <FaGithub aria-hidden="true" />
+                  <FaGithub
+                    aria-hidden="true"
+                  />
 
                   <span>
                     GitHub
@@ -374,7 +377,9 @@ function Contact() {
                   rel="noopener noreferrer"
                   aria-label="Open Rishav Kamal's LinkedIn profile"
                 >
-                  <FaLinkedinIn aria-hidden="true" />
+                  <FaLinkedinIn
+                    aria-hidden="true"
+                  />
 
                   <span>
                     LinkedIn
@@ -387,13 +392,13 @@ function Contact() {
 
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* ==================================================
               CTA
           ================================================== */}
 
-          <motion.div
+          <m.div
             className="contact-cta-wrap"
             style={{
               opacity: ctaOpacity,
@@ -417,7 +422,7 @@ function Contact() {
                 ↗
               </span>
             </a>
-          </motion.div>
+          </m.div>
 
         </div>
 
@@ -425,7 +430,7 @@ function Contact() {
             FOOTER
         ================================================== */}
 
-        <motion.div
+        <m.div
           className="contact-footer"
           style={{
             opacity: footerOpacity,
@@ -458,7 +463,7 @@ function Contact() {
               BUILT WITH REACT
             </span>
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>
