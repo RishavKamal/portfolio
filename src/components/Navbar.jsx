@@ -50,7 +50,25 @@ function Navbar() {
     useState(false);
 
   const [theme, setTheme] =
-    useState("light");
+    useState(() => {
+      const savedTheme =
+        window.localStorage.getItem(
+          "portfolio-theme",
+        );
+
+      if (
+        savedTheme === "dark" ||
+        savedTheme === "light"
+      ) {
+        return savedTheme;
+      }
+
+      return window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches
+        ? "dark"
+        : "light";
+    });
 
   const isNavigatingRef =
     useRef(false);
@@ -60,43 +78,6 @@ function Navbar() {
 
   const navigationTimerRef =
     useRef(null);
-
-  /* ==================================================
-     INITIALIZE THEME
-  ================================================== */
-
-  useEffect(() => {
-    const savedTheme =
-      window.localStorage.getItem(
-        "portfolio-theme",
-      );
-
-    if (
-      savedTheme === "dark" ||
-      savedTheme === "light"
-    ) {
-      setTheme(savedTheme);
-
-      document.documentElement.dataset.theme =
-        savedTheme;
-
-      return;
-    }
-
-    const prefersDark =
-      window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-
-    const initialTheme = prefersDark
-      ? "dark"
-      : "light";
-
-    setTheme(initialTheme);
-
-    document.documentElement.dataset.theme =
-      initialTheme;
-  }, []);
 
   /* ==================================================
      APPLY THEME
